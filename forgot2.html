@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Home</title>
+
+   <link href="img/favicon.ico" rel="icon">
+   <!-- font awesome cdn link  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+   <!-- custom css file link  -->
+   <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+   
+<!-- header section starts  -->
+
+<header class="header">
+
+   <nav class="navbar nav-1">
+      <section class="flex">
+         <a href="home.html" class="logo"><i class="fas fa-house"></i>Bla Bla</a>
+      </section>
+   </nav>
+
+   <nav class="navbar nav-2">
+      <section class="flex">
+         <div id="menu-btn" class="fas fa-bars"></div>
+
+         <div class="menu">
+            <ul>
+               <li><a href="buy.html">BUY </a></li>
+               <li><a href="rent.html">RENT </a></li>
+               <li><a href="new.html">NEW LAUNCHES </a></li>
+               <li><a href="agent.html">FIND AGENT </a></li>
+               <li><a href="#">COMMUNITY</a>
+                  <ul>
+                     <li><a href="feedback.html">FEEDBACK</a></li>
+                     <li><a href="testimonial.html">TESTIMONIAL</a></li>
+                  </ul>
+               </li>
+               <li><a href="#">HELP<i class="fas fa-angle-down"></i></a>
+                  <ul>
+                     <li><a href="about.html">about us</a></i></li>
+                     <li><a href="contact.html">contact us</a></i></li>
+                     <li><a href="faq.html">FAQ</a></i></li>
+                  </ul>
+               </li>
+            </ul>
+         </div>
+
+         <ul>
+            <li><a href="#">account <i class="fas fa-angle-down"></i></a>
+               <ul>
+                  <li><a href="login.html">login</a></li>
+                  <li><a href="register.html">register</a></li>
+               </ul>
+            </li>
+         </ul>
+      </section>
+   </nav>
+
+</header>
+
+<!-- header section ends -->
+
+<!-- login section starts  -->
+
+<section class="form-container">
+
+    <form action="" method="post" onsubmit="return validateForm()">
+        <h3>Enter New Password</h3>
+        <input type="password" name="pass" required maxlength="20" placeholder="Enter Your Password (min 8 characters)" class="box" id="myInput" minlength="8">
+        <p style="text-align: left;"><input type="checkbox" onclick="myFunction()"> Show Password</p>
+        <input type="password" name="c_pass" required maxlength="20" placeholder="Confirm Your Password" class="box" id="myInput1" minlength="8">
+        <p style="text-align: left;"><input type="checkbox" onclick="myFunction1()"> Show Password</p>
+        <button type="submit" class="btn">Enter</button>
+     </form>
+
+</section>
+
+<!-- login section ends -->
+
+
+
+ <!-- footer section starts  -->
+
+ <footer class="footer">
+
+    <section class="flex">
+ 
+       <div class="box">
+          <a href="tel:01234567890"><i class="fas fa-phone"></i><span>01234567890</span></a>
+          <a href="tel:01234567890"><i class="fas fa-phone"></i><span>60324680123</span></a>
+          <a href="mailto:shaikhanas@gmail.com"><i class="fas fa-envelope"></i><span>blabla@gmail.com</span></a>
+          <a href="https://www.google.com/maps/search/mmu+cyberjaya/@2.9265004,101.6395575,17z/data=!3m1!4b1?entry=ttu"><i class="fas fa-map-marker-alt"></i><span>Persiaran Multimedia, 63100 <br>&emsp;&ensp;Cyberjaya, Selangor </span></a>
+          
+       </div>
+ 
+       <div class="box">
+          <a href="home.html"><span>Home</span></a>
+          <a href="about.html"><span>About Us</span></a>
+          <a href="contact.html"><span>Contact Us</span></a>
+          <a href="privacy.html"><span>Privacy Policy</span></a>
+          <a href="terms.html"><span>Terms & Condition</span></a>
+       </div>
+ 
+       <div class="box">
+          <a href="https://www.facebook.com/yansheng0405"><span>facebook</span><i class="fab fa-facebook-f"></i></a>
+          <a href="https://twitter.com/?lang=en"><span>twitter</span><i class="fab fa-twitter"></i></a>
+          <a href="https://wa.me/01234567890"><span>whatsapp</span><i class="fab fa-whatsapp"></i></a>
+          <a href="https://www.instagram.com/soonkeattt__/"><span>instagram</span><i class="fab fa-instagram"></i></a>
+          <a href="cookies.html"><span>cookies</span><i class="fa-solid fa-cookie"></i></a>
+ 
+       </div>
+ 
+    </section>
+ 
+    <div class="credit">&copy; copyright @ 2022 by <span><a href=home.html style="color : red;">Bla Bla</a></span> | all rights reserved!</div>
+ 
+ </footer>
+ 
+ <!-- footer section ends -->
+
+
+<!-- custom js file link  -->
+<script src="js/script.js"></script>
+<script src="js/script.js"></script>
+<script>
+   function myFunction() {
+      var x = document.getElementById("myInput");
+      if (x.type === "password") {
+         x.type = "text";
+      } else {
+         x.type = "password";
+      }
+   }
+
+   function myFunction1() {
+      var x = document.getElementById("myInput1");
+      if (x.type === "password") {
+         x.type = "text";
+      } else {
+         x.type = "password";
+      }
+   }
+    
+   function validateForm() {
+      var password = document.getElementById("myInput").value;
+      var confirmPassword = document.getElementById("myInput1").value;
+
+      if (password !== confirmPassword) {
+         alert("Password and Confirm Password do not match.");
+         return false; // Prevent form submission
+      } else {
+         alert("Password changed successfully. Redirecting to login page.");
+         window.location.href = "login.html"; // Redirect to login page
+         return false; // Prevent form submission
+      }
+   }
+</script>
+</body>
+</html>

@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Responsive Review Page</title>
+    <link rel="stylesheet" href="test2.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: Poppins, sans-serif;
+            box-sizing: border-box;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .review-container {
+            display: flex;
+            align-items: center;
+            width: 80%;
+            
+            justify-content: space-between;
+        }
+
+        .summary-review{
+            display: flex;
+            flex-direction: column;
+            margin: 15px;
+            width: 415.4px;
+        }
+
+        .summary-box{
+            display: flex;
+            flex-direction: column;
+            padding: 2rem;
+            height: 323.6px;
+            width: 298.4px;
+            box-shadow: 2px 2px 15px rgba(0, 0, 0, 1);
+            text-align: center;
+        }
+        .house-btn{
+            width: 298.4px;
+            margin: auto;
+            margin-bottom: 12px;
+        }
+        .house-btn button{
+            border: none;
+            outline: none;
+            padding: 2px 6px;
+            border-radius: .3rem;
+            background-color: red;
+            cursor: pointer;
+        }
+        .add-review{
+            color: red;
+            font-size: 14px;
+            padding: 5px 20px;
+            border-radius: .3rem;
+            cursor: pointer;
+            border-color: red;
+            margin-top: 15px;
+        }
+        .wrapper {
+            margin: 15px;
+            padding: 2rem;
+            max-width: 800px;
+            height: 487.2px;
+            width: 100%;
+            box-shadow: 2px 2px 15px rgba(0, 0, 0, 1);
+            text-align: center;
+        }
+
+        #testimonials {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        .testimonials-heading {
+
+            margin-top: 20px;
+            width: 80%;
+            letter-spacing: 1px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .testimonials-heading h1 {
+            text-align: center;
+            width: 100%;
+            margin: 15px;
+            margin-left: 20px;
+            font-size: 2.2rem;
+            font-weight: 500;
+            background-color: #202020;
+            color: #fff;
+            padding: 10px 20px;
+        }
+
+        .testimonials-heading span {
+            font-size: 1.4rem;
+            color: #252525;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .testimonials-box-container {
+            display: flex;
+            align-items: center;
+            width: 80%;
+            overflow-x: auto;
+            margin-bottom: 30px;
+        }
+
+        .testimonials-box {
+            min-width: 500px;
+            box-shadow: 2px 2px 15px rgba(0, 0, 0, 1);
+            background-color: #fff;
+            padding: 20px;
+            margin: 15px;
+            cursor: pointer;
+            height: 260px;
+        }
+
+        .profile-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 10px;
+        }
+
+        .profile-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .profile {
+            display: flex;
+            align-items: center;
+        }
+
+        .name-user {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .name-user strong {
+            color: #3d3d3d;
+            font-size: 1.1rem;
+            letter-spacing: 0.5px;
+        }
+
+        .name-user span {
+            color: #979797;
+            font-size: 0.8rem;
+            letter-spacing: 0.5px;
+        }
+
+        .reviews {
+            color: #f9d71c;
+        }
+
+        .box-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .client-comments {
+            font-size: 0.9rem;
+            color: #4b4b4b;
+        }
+        .title-text{
+            font-size: 1.1rem;
+            color: #3d3d3d;
+        }
+
+        .testimonials-box:hover {
+            transform: translateY(-10px);
+            transition: all ease 0.3s;
+        }
+
+
+        .wrapper h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .rating {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: .5rem;
+            font-size: 1.5rem;
+            color: #f9d71c;
+            margin-bottom: 2rem;
+            border-radius: .5rem;
+            border: none;
+            outline: none;
+            resize: none;
+        }
+
+
+        textarea {
+            width: 100%;
+            padding: 1rem;
+            margin-bottom: .5rem;
+            border-radius: .5rem;
+            background-color: #D3D3D3;
+            border: none;
+            outline: none;
+            resize: none;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: .5rem;
+            align-items: center;
+        }
+
+        .btn-cancel,
+        .btn-submit {
+            padding: .75rem 1rem;
+            border-radius: .3rem;
+            border: none;
+            outline: none;
+            background-color: #D3D3D3;
+            cursor: pointer;
+        }
+
+        .rating .star {
+            cursor: pointer;
+        }
+
+        .rating .star:hover {
+            transform: scale(1.1);
+        }
+        .rating .star .active{
+            opacity: 0;
+            animation: animate.5s ease-in-out forwards;
+        }
+
+        .write-review{
+            text-align: left;  
+            margin-top: 20px;
+        }
+        .write-review span{
+            color: red;
+        }
+        .qty-review{
+            text-align: center;
+            width: 80%;
+            margin: 15px;
+            margin-left: 20px;
+            font-size: 2.2rem;
+            font-weight: 500;
+            background-color: #202020;
+            color: #fff;
+            padding: 10px 20px;
+        }
+
+        #image-popup {
+            width: 100%;
+            height: 100%;
+            border: 1px solid #333;
+            background: rgba(0, 0, 0, .9);
+            text-align: center;
+            box-sizing: border-box;
+            padding: 20px;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 100;
+            box-shadow: none;
+            display: none;
+        }
+        .pop-wrapper {
+            position: absolute;
+            background-color: white;
+            width: 830px;
+            height: 520px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            border-radius: 5px;
+            object-fit: cover;
+        }
+
+        #closs {
+            position: absolute;
+            top: 80;
+            right: 30px;
+            font-size: 40px;
+            color:aliceblue;
+            cursor: pointer;
+        }
+        @media(max-width:768px){
+            #image-popup img{
+                width: 95%;
+            }
+        }
+
+    </style>
+
+</head>
+
+<body>
+     <!-- header section starts  -->
+
+     <header class="header">
+
+        <nav class="navbar nav-1">
+        <section class="flex">
+            <a style="margin-left: 25px; font-size: 25px;" href="home.html" class="logo"><i class="fas fa-house"></i>Bla Bla</a>
+        </section>
+        </nav>
+    
+        <nav class="navbar nav-2">
+        <section class="flex">
+            <div id="menu-btn" class="fas fa-bars"></div>
+    
+            <div  class="menu">
+                <ul>
+                    <li ><a style="font-size: 18px;  padding:0 32px " href="buy.html">BUY </a></li>
+                    <li><a style="font-size: 18px;  padding:0 32px" href="rent.html">RENT </a></li>
+                    <li><a style="font-size: 18px;  padding:0 32px" href="new.html">NEW LAUNCHES </a></li>
+                    <li><a style="font-size: 18px;  padding:0 32px" href="agent.html">FIND AGENT </a></li>
+                    <li><a style="font-size: 18px;  padding:0 32px" href="#">COMMUNITY</a>
+                    <ul>
+                        <li><a style="font-size: 18px;  padding:0 32px" href="feedback.html">FEEDBACK</a></li>
+                        <li><a style="font-size: 18px;  padding:0 32px" href="testimonial.html">TESTIMONIAL</a></li>
+                    </ul>
+                    </li>
+                    <li><a style="font-size: 18px;  padding:0 32px" href="#">HELP<i class="fas fa-angle-down"></i></a>
+                    <ul>
+                        <li><a style="font-size: 18px;  padding:0 32px" href="about.html">about us</a></i></li>
+                        <li><a style="font-size: 18px;  padding:0 32px" href="contact.html">contact us</a></i></li>
+                        <li><a style="font-size: 18px;  padding:0 32px" href="faq.html">FAQ</a></i></li>
+                    </ul>
+                    </li>
+                </ul>
+            </div>
+    
+            <ul>
+                <li><a style="font-size: 22px ; padding:0 32px" href="#">account <i class="fas fa-angle-down"></i></a>
+                    <ul>
+                    <li><a style="font-size: 18px;  padding:0 32px" href="login.html">login</a></li>
+                    <li><a style="font-size: 18px;  padding:0 32px" href="register.html">register</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+        </nav>
+    
+    </header>
+    
+    <!-- header section ends -->
+
+    <div id="testimonials">
+
+        <div class="testimonials-heading">
+            <span>Comments</span>
+            <h1>Clients Say</h1>
+        </div>
+
+        <div class="review-container">
+
+            <div class="summary-review">
+                <div class="market-place">
+                    <h1 style="font-size: 30px;">Review</h1>
+                    <p style="font-size: 22px; color: red; margin: 0px;">Solstice @ Pan'gaea</p>
+                    <p style="font-size: 18px; margin: 0px; padding: 0px;">Persiaran Bestari, Cyber 11, Cyberjaya, Sepang, Selangor</p>
+                </div>
+                <div class="house-btn">
+                    <button style="margin-right: 20px;">3 units for rent</button>
+                    <button>8 units for sale</button>
+                </div>                
+                <div class="summary-box">
+                    <div>
+                        <h1 style="font-size: 60px; ">4.8</h1>
+                        <p style="font-size: 18px; width: 258.4; height: 48;">Out Of 5</p>
+                        <div style="font-size: 20px; margin: 20px;" class="reviews">
+                            <i class="fas fa-star star star star"></i>
+                            <i class="fas fa-star star star star"></i>
+                            <i class="fas fa-star star star star"></i>
+                            <i class="fa-solid fa-star star star star-half-stroke"></i>
+                            <i class="far fa-star star star star"></i>
+                        </div>
+                        <p style="font-size: 14px; color: #2c2c2c;">base on 4 reviews</p>
+                        <button onclick="popup()" class="add-review">+Add review</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="wrapper">
+
+                <div class="profile">
+                    <div class="profile-img">
+                        <img src="image/Screenshot 2024-01-12 221553.png" alt="Profile Image">
+                    </div>
+                    <div >
+                        <h3 style="margin-left: 30px; font-size: 29px;">Write your review and rate</h3>
+                    </div>
+                </div>
+                
+                <form action="#">
+                    <div style="font-size: 30px;" class="rating">
+                        <input type="number" name="rating" hidden>
+                        <i class="bx bx-star star"></i>
+                        <i class="bx bx-star star"></i>
+                        <i class="bx bx-star star"></i>
+                        <i class="bx bx-star star"></i>
+                        <i class="bx bx-star star"></i> 
+                    </div>
+                    <div class="write-review">
+                        <p>Title <span>*</span></p>
+                        <textarea name="title" cols="30" rows="1" placeholder="Share what you think about The Arc @ Cyberjaya"></textarea>
+                        <p>Review <span>*</span></p>
+                        <textarea name="opinion" cols="30" rows="5" placeholder="Share what you think about The Arc @ Cyberjaya"></textarea>
+                    </div>
+                    <div class="btn-group">
+                        <button type="submit" class="btn-submit">Submit</button>
+                        <button class="btn-cancel">Cancel</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+
+        <div class="qty-review">
+            <p>3 Reviews For This Condo </p>
+        </div>
+
+        <div class="testimonials-box-container">
+
+            <div class="testimonials-box">
+                <div class="box-top">
+                    <div class="profile">
+                        <div class="profile-img">
+                            <img src="image/userimage13.png" alt="Profile Image">
+                        </div>
+                        <div class="name-user">
+                            <strong>HarmonyHarbo</strong>
+                            <span>@HHarbor_36</span>
+                        </div>
+                    </div>
+                    <div class="reviews">
+                        <i class="fas fa-star star star star"></i>
+                        <i class="fas fa-star star star star"></i>
+                        <i class="fas fa-star star star star"></i>
+                        <i class="fa-solid fa-star star star star-half-stroke"></i>
+                        <i class="far fa-star star star star"></i>
+                    </div>
+                </div>
+                <div class="client-comments">
+                    <p class="title-text"><strong>Elegance Redefined: Embrace Luxury at Solstice Cyberjaya</strong></p>
+                    <p>Solstice Cyberjaya House – where contemporary aesthetics meet functionality. Enjoy a lifestyle of convenience and elegance in this meticulously crafted residence, featuring top-notch amenities and thoughtful design</p>
+                </div>
+            </div>
+
+            <div class="testimonials-box">
+                <div class="box-top">
+                    <div class="profile">
+                        <div class="profile-img">
+                            <img src="image/userimage14.webp" alt="Profile Image">
+                        </div>
+                        <div class="name-user">
+                            <strong>CyberPhoenix</strong>
+                            <span>@CPhoenix21</span>
+                        </div>
+                    </div>
+                    <div class="reviews">
+                        <i class="fas fa-star star star star"></i>
+                        <i class="fas fa-star star star star"></i>
+                        <i class="fas fa-star star star star"></i>
+                        <i class="fa-solid fa-star star star star-half-stroke"></i>
+                        <i class="far fa-star star star star"></i>
+                    </div>
+                </div>
+                <div class="client-comments">
+                    <p class="title-text"><strong>Solstice Cyberjaya House: A Symphony of Modern Livin</strong></p>
+                    <p>Discover unparalleled luxury living at Solstice Cyberjaya! This house seamlessly blends modern design with comfort, offering residents a sophisticated retreat in the heart of Cyberjaya.</p>
+                </div>
+            </div>
+
+            <div class="testimonials-box">
+                <div class="box-top">
+                    <div class="profile">
+                        <div class="profile-img">
+                            <img src="image/userimage15.png" alt="Profile Image">
+                        </div>
+                        <div class="name-user">
+                            <strong>ZenVoyager</strong>
+                            <span>@ZVoyager_108</span>
+                        </div>
+                    </div>
+                    <div class="reviews">
+                        <i class="fas fa-star star star star"></i>
+                        <i class="fas fa-star star star star"></i>
+                        <i class="fas fa-star star star star"></i>
+                        <i class="fa-solid fa-star star star star-half-stroke"></i>
+                        <i class="far fa-star star star star"></i>
+                    </div>
+                </div>
+                <div class="client-comments">
+                    <p class="title-text"><strong>Unveiling Solstice: Your Sanctuary in the Heart of Cyberjaya</strong></p>
+                    <p>Elevate your living experience at Solstice Cyberjaya House. Immerse yourself in the perfect fusion of style and practicality, surrounded by cutting-edge architecture, lush greenery, and a vibrant community ambiance.</p>
+                </div>
+            </div>
+
+            <div id="image-popup">
+                <span id="closs">&times;</span>
+                <div class="pop-wrapper">
+                    <div class="wrapper">
+
+                        <div class="profile">
+                            <div class="profile-img">
+                                <img src="image/Screenshot 2024-01-12 221553.png" alt="Profile Image">
+                            </div>
+                            <div >
+                                <h3 style="margin-left: 30px;">Write your review and rate</h3>
+                            </div>
+                        </div>
+                        
+                        <form action="#">
+                            <div style="font-size: 27px;" class="rating">
+                                <input type="number" name="rating" hidden>
+                                <i class="bx bx-star star"></i>
+                                <i class="bx bx-star star"></i>
+                                <i class="bx bx-star star"></i>
+                                <i class="bx bx-star star"></i>
+                                <i class="bx bx-star star"></i> 
+                            </div>
+                            <div class="write-review">
+                                <p>Title <span>*</span></p>
+                                <textarea name="title" cols="30" rows="1" placeholder="Share what you think about The Arc @ Cyberjaya"></textarea>
+                                <p>Review <span>*</span></p>
+                                <textarea name="opinion" cols="30" rows="5" placeholder="Share what you think about The Arc @ Cyberjaya"></textarea>
+                            </div>
+                            <div class="btn-group">
+                                <button type="submit" class="btn-submit">Submit</button>
+                                <button class="btn-cancel">Cancel</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                
+            </div>
+
+        </div>
+    </div>
+
+    <footer class="footer">
+
+        <section class="flex">
+     
+           <div class="box">
+              <a style="font-size: 18px" href="tel:01234567890"><i class="fas fa-phone"></i><span>01234567890</span></a>
+              <a style="font-size: 18px" href="tel:01234567890"><i class="fas fa-phone"></i><span>60324680123</span></a>
+              <a style="font-size: 18px" href="mailto:shaikhanas@gmail.com"><i class="fas fa-envelope"></i><span>blabla@gmail.com</span></a>
+              <a style="font-size: 18px" href="https://www.google.com/maps/search/mmu+cyberjaya/@2.9265004,101.6395575,17z/data=!3m1!4b1?entry=ttu"><i class="fas fa-map-marker-alt"></i><span>Persiaran Multimedia, 63100 <br>&emsp;&ensp;&ensp;Cyberjaya, Selangor </span></a>
+              
+           </div>
+     
+           <div class="box">
+              <a style="font-size: 18px" href="home.html"><span>Home</span></a>
+              <a style="font-size: 18px" href="about.html"><span>About Us</span></a>
+              <a style="font-size: 18px" href="contact.html"><span>Contact Us</span></a>
+              <a style="font-size: 18px" href="privacy.html"><span>Privacy Policy</span></a>
+              <a style="font-size: 18px" href="terms.html"><span>Terms & Condition</span></a>
+           </div>
+     
+           <div class="box">
+              <a style="font-size: 18px" href="https://www.facebook.com/yansheng0405"><span>facebook</span><i class="fab fa-facebook-f"></i></a>
+              <a style="font-size: 18px" href="https://twitter.com/?lang=en"><span>twitter</span><i class="fab fa-twitter"></i></a>
+              <a style="font-size: 18px"  href="https://wa.me/01234567890"><span>whatsapp</span><i class="fab fa-whatsapp"></i></a>
+              <a style="font-size: 18px" href="https://www.instagram.com/soonkeattt__/"><span>instagram</span><i class="fab fa-instagram"></i></a>
+              <a style="font-size: 18px" href="cookies.html"><span>cookies</span><i class="fa-solid fa-cookie"></i></a>
+     
+           </div>
+     
+        </section>
+     
+        <div style="font-size: 18px" class="credit">&copy; copyright @ 2022 by <span ><a style="font-size: 18px; color: red;" href=home.html>Bla Bla</a></span> | all rights reserved!</div>
+     
+     </footer>
+
+    <script>
+        const allStar = document.querySelectorAll('.rating .star');
+        
+        allStar.forEach((item, idx) => {
+            item.addEventListener('click', function () {
+                let click = 0
+
+                allStar.forEach(i=>{
+                    i.classList.replace('bxs-star','bx-star')
+                    i.classList.remove('active')
+                })
+                for (let i = 0; i < allStar.length; i++) {
+                    if (i <= idx) {
+                        allStar[i].classList.replace('bx-star', 'bxs-star');
+                    }
+                }
+            });
+        });
+
+        function popup(){
+            document.getElementById('image-popup').style.display = 'block';
+        }
+        document.getElementById('closs').addEventListener('click', function(){
+            document.getElementById('image-popup').style.display = 'none';
+
+        })
+
+    </script>
+
+
+</body>
+
+</html>

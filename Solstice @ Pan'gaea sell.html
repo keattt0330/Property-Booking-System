@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head> 
+        <title>House Detail Page</title>
+        <link rel="stylesheet" href="test2.css">
+        <link rel="stylesheet" href="header.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" 
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" 
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        
+        <style>
+            
+            .container-img {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+    
+            .row {
+                display: flex;
+            }
+    
+            .column {
+                flex: auto;
+            }
+    
+            .mainImg {
+                width: 480px;
+                height: 414px;
+                margin-top: 2px;
+                margin-right: 2px;
+            }
+    
+            .subImg {
+                width: 236px;
+                height: 205px;
+                margin: 2px 2px;
+            }
+    
+            nav span {
+                margin-right: 10px;
+            }
+            .tittle {
+                display: inline-block;
+            }
+            .navBar {
+                display: inline-block;
+                margin-bottom: 40px;
+            }
+            .address {
+                display: inline-block;
+                margin-top: 0px;
+            }
+            .map {
+                color: red;
+            }
+            .house-type{
+                color: white;
+                background-color: #999999;
+                width: 125.56px;
+                height: 20px;
+                line-height: 20px;
+                text-align: center;
+                padding: 4px 8px;
+                border-radius: 8px;
+                margin: 0px 8px 0px 0px;
+            }
+            .price {
+                display: inline-block;
+                margin-top: 0px;
+            }
+    
+            .horizontal {
+                width: 620px;
+                display: inline-block;
+                margin-bottom: 0px;
+            }
+    
+            .vertical {
+                width: 90px;
+                transform: rotate(90deg);
+                display: inline-block;
+                margin-top: 60px;
+                margin-right: 39px;
+                margin-bottom: 0px;
+                color: grey;
+            }
+            .icon {
+                display: flex;
+            }
+            .icon img {
+                width: 30px;
+                height: 30px;
+            }
+    
+            .column-icon {
+                margin-right: 30px;
+                text-align: center;
+                align-items: center;
+                flex-direction: column;
+            }
+            .hi {
+                display: inline-block;
+                margin-left: 0px; /* Adjusted margin */
+            }
+            .agent-section {
+            position: sticky;
+            top: 0; 
+            display: inline-block;
+            height: 520px;
+            width: 320px;
+            border: 1px solid grey;
+            margin-top: 0px;
+            border-radius: 5px;
+            visibility: visible;
+            }
+    
+            .row-main {
+                display: flex;
+            }
+            .column-main {
+                flex: auto;
+                padding-left: 280px; 
+            }
+            .company{
+                width: 250px;
+                margin: auto;
+                margin-top: 20px;
+                display: flex;
+            }
+            .company span{
+                margin-left: 10px;
+                font-size: 12px;
+                line-height: 16.5px; 
+                height: 33px;
+                line-height: 33px;
+            }
+            .agent-info {
+                display: flex;
+                align-items: center;
+                width: 300px;
+                margin-top: 30px;
+                margin-left: auto;
+                margin-bottom: 60px;
+            }
+            .agent-detail {
+                margin-left: 10px;
+            }
+            .agent-info img {
+                width: 58.4px;
+                height: 58.4px;
+                border-radius: 50%;
+    
+            }
+            .agent-detail p{
+                margin: 5px;
+            }
+            .button{
+                margin-left: auto;
+                width: 250px;
+                height: 28px;
+                padding: 4px;
+                margin: 0px 0px 16px;
+                border: 1px solid #999999;
+                background-color: #ffffff;
+                margin-left: 30px;
+                margin-right: 30px;
+                border-radius: 7px;
+            }
+            .description{
+                margin: 0px 0px 18px;
+            }
+            .description p{
+                font-size: 16px;
+                margin: 5px;
+                color: #505050;
+            }
+            .readmore-text{
+                display: none;
+            }
+    
+            .readmore-text--show{
+                display: inline;
+            }
+            .table-column{
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 20px;
+            }
+            .table-row{
+                flex: auto;
+    
+            }
+            .table-row p{
+                margin: 5px;
+            }
+            .table-value{
+                font-size: 14px;
+                color: #999999;
+            }
+            .table-nextvalue{
+                font-size: 16px;
+                color: #505050;
+            }
+            iframe{
+                height: 400px;
+            }
+            .facilities-img{
+                width: 24px;
+                height: 24px;
+            }
+            .facilities-text{
+                height: 24px;
+                margin: 0px;
+                padding: 0px;
+                align-items: center;
+                display: inline-block;
+                font-size: 16px;
+                color: #505050;
+                margin-top: 0px;
+                margin-left: 15px;
+            }
+            .facilities{
+                padding: 16px 0px;
+            }
+            .booking{
+                display: flex;
+                justify-content: space-between;
+            }
+            .booking button{
+                color: white;
+                background-color: #999999;
+                line-height: 20px;
+                text-align: center;
+                padding: 4px 8px;
+                border-radius: 8px;
+                margin-right: 20px;
+                border: none;
+                outline: none;
+                cursor: pointer;
+            }
+    
+            #comfirm-container-popup {
+                position: fixed; 
+                margin: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                height: 100%;
+                background: grey;
+                display: none;
+            }
+    
+            .comfirm-container {
+                text-align: center;
+                border: #505050 1px solid;
+                width: 278px;
+                padding: 15px;
+                background-color: white;
+                margin: auto;
+                margin-top:  100px;
+                }
+    
+            .make-appointment {
+                display: inline-block;
+                text-align: left;
+                width: 277.05px;
+            }
+    
+    
+            fieldset {
+                margin-bottom: 15px;
+            }
+    
+            legend {
+                font-size: 18px;
+                font-weight: bold;
+            }
+    
+            label {
+                display: block;
+            }
+    
+            input[type="date"],
+            input[type="time"] {
+                width: 200px;
+            }
+    
+            .button-payment {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            #closs {
+                position: absolute;
+                top: 10px;
+                right: 30px;
+                font-size: 40px;
+                color:aliceblue;
+                cursor: pointer;
+            }
+            .header .navbar.nav2 .menu ul li a{
+                font-size: 18px;
+            }
+            .btn{
+                color: white;
+                background-color: #999999;
+                line-height: 20px;
+                text-align: center;
+                padding: 4px 8px;
+                border-radius: 8px;
+                margin-right: 10px;
+                /* border: none;
+                outline: none;  */
+                cursor: pointer;
+                width: 110px;
+            }
+            .containercal{
+            background: var(--main-color);
+            color: aliceblue;
+            padding: 20px;
+            border-radius: 10px;
+            width: 560px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .input{
+            width: 550px;
+            font-size: 20px;
+            height: 30px;
+        }
+
+        .payment{
+            font-weight: 600;
+            font-size: 20px;
+        }   
+    
+    
+        </style>
+    </head>
+<body>
+
+        <!-- header section starts  -->
+
+        <header class="header">
+
+            <nav class="navbar nav-1">
+               <section class="flex">
+                  <a style="margin-left: 60px;" href="home.html" class="logo"><i class="fas fa-house"></i>Bla Bla</a>
+               </section>
+            </nav>
+         
+            <nav class="navbar nav-2">
+               <section class="flex">
+                  <div id="menu-btn" class="fas fa-bars"></div>
+         
+                  <div style="margin-bottom: 10px;"  class="menu">
+                     <ul>
+                        <li><a style="font-size: 18px;  padding:0 32px " href="buy.html">BUY </a></li>
+                        <li><a style="font-size: 18px;  padding:0 32px" href="rent.html">RENT </a></li>
+                        <li><a style="font-size: 18px;  padding:0 32px" href="new.html">NEW LAUNCHES </a></li>
+                        <li><a style="font-size: 18px;  padding:0 32px" href="agent.html">FIND AGENT </a></li>
+                        <li><a style="font-size: 18px;  padding:0 32px" href="#">COMMUNITY</a>
+                           <ul style="margin-left: -40px; width: 175px">
+                              <li><a style="font-size: 18px; padding-bottom: 0; padding-top: 10px;" href="feedback.html">FEEDBACK</a></li>
+                              <li><a style="font-size: 18px; padding-bottom: 0; padding-top: 10px;" href="testimonial.html">TESTIMONIAL</a></li>
+                           </ul>
+                        </li>
+                        <li><a style="font-size: 18px;  padding:0 32px;" href="#">HELP<i class="fas fa-angle-down"></i></a>
+                           <ul style="margin-left: -40px; width: 148px;">
+                              <li><a style="font-size: 18px; padding-bottom: 0; padding-top: 10px;">about us</a></i></li>
+                              <li><a style="font-size: 18px; padding-bottom: 0; padding-top: 10px;">contact us</a></i></li>
+                              <li><a style="font-size: 15px; padding-bottom: 0; padding-top: 10px;">FAQ</a></i></li>
+                           </ul>
+                        </li>
+                     </ul>
+                  </div>
+         
+                  <ul style="margin: 0;">
+                     <li><a style="font-size: 22px ; padding:0 32px; margin: 0;" href="#">account <i class="fas fa-angle-down"></i></a>
+                        <ul style="margin-left: -40px; width: 180px;">
+                           <li><a style="font-size: 18px; padding-bottom: 0; padding-top: 10px;" href="login.html">login</a></li>
+                           <li><a style="font-size: 18px; padding-bottom: 0; padding-top: 10px;" href="register.html">register</a></li>
+                        </ul>
+                     </li>
+                  </ul>
+               </section>
+            </nav>
+         
+         </header>
+        
+        <!-- header section ends -->
+
+    <div id="comfirm-container-popup">
+        <span id="closs">&times;</span>
+        <div class="comfirm-container">
+            <div class="make-appointment">
+                <div style="text-align: center;">
+                    <h2>Make Appointment</h2>
+                    <p>View House Detail</p>
+                </div>
+                <fieldset>
+                    <legend>Pick Your Date</legend>
+                    <label for="date-picker">
+                        Date:
+                        <input id="date-picker" type="date">
+                    </label>
+                </fieldset>
+                <fieldset>
+                    <legend>Pick Your Time</legend>
+                    <label for="time-picker">
+                        Time:
+                        <input id="time-picker" type="time">
+                    </label>
+                </fieldset>
+                <div class="button-payment"><button onclick="gotoLink(this)" value="paymentpage.html">Make Payment</button></div>
+                <p style="font-size: 12px; color: #505050;"><span style="color: red;">*</span>Just pay the 10% booking fee and if you are not interested the booking fee will be refunded</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- upload image -->
+    <a href="Solstice @ Pan'gaea sell img.html"><div class="container-img">
+        <div class="row">
+            <img class="column mainImg" src="image4/Solstice-Pan-gaea-Sepang-Malaysia.jpg">
+
+            <div class="column">
+                <div class="row">
+                    <img class="column subImg" src="image4/Solstice-Pan-gaea-Sepang-Malaysia (1).jpg">
+                    <img class="column subImg" src="image4/Solstice-Pan-gaea-Sepang-Malaysia (4).jpg">
+                </div>
+                
+                <div class="row">
+                    <img class="column subImg" src="image4/Solstice-Pan-gaea-Sepang-Malaysia (3).jpg">
+                    <img class="column subImg" src="image4/Solstice-Pan-gaea-Sepang-Malaysia (2).jpg">
+                </div>
+            </div>
+        </div>
+    </div></a>
+    
+
+    <div class="row-main">
+        <!-- all house detail -->
+        <div class="column-main" style="width: 640px; height: auto;">
+            <h1 class="tittle">
+                Solstice @ Pan'gaea
+            </h1>
+            <br>
+            <p class="address">- Persiaran Bestari, Cyber 11, Cyberjaya, Sepang, Selangor </p>
+            <a href="#map"><span class="map"> - See on Map <map name=""></map></span></a>
+            <div class="booking">
+                <p class="house-type">Condominium</p>
+                <button onclick="popup()">Booking Now!!!</button>
+            </div>
+            <hr class="horizontal">
+            <br>
+            <h2 style="font-size: 20px;" class="price">RM 270,000</h2>
+            <hr class="vertical">
+            <div class="hi">
+                <div class="icon">
+                    <div class="column-icon">
+                        <img src="image/bed.png">
+                        <p class="icon-name">1 Bed</p>
+                    </div>
+        
+                    <div class="column-icon" >
+                        <img src="image/bathroom.png">
+                        <p class="icon-name">1 Bath</p>
+                    </div>
+        
+                    <div class="column-icon">
+                        <img src="image/plans.png">
+                        <p class="icon-name">450 Sqft</p>
+                    </div>
+        
+                    <div class="column-icon" style="margin-right: 0px;">
+                        <img src="image/chandelier.png">
+                        <p class="icon-name">Fully Furnished</p>
+                    </div>
+                </div>
+            </div>
+            <hr class="horizontal">
+            <br>
+            <h2 class="tittle">About this property</h2>
+            <h3 style="font-size: 16px;">Below Market Price Many Unit On Hand</h3>
+
+            <div class="description">
+                <p>Solstice condo for Rent RM1200</p>
+                <br>
+
+                <div class="readmore-container"> 
+                    <div class="container">
+                        <p>*450sf</p>
+                        <p>*1Room1Bath</p>
+                        <p>*Fully furnished</p>
+                        <div class="readmore-text">
+                            <p>*Build in kitchen cabinet</p>
+                            <p>*Wardrobe</p>
+                            <p>*Bed & Mattress</p>
+                            <br>
+                            <p>More info kindly contact Keng to</p>
+                            <p>0*****</p>
+                        </div>
+                        <p class="readmore-btn" style="color: red;">Read More...</p>
+                    </div>
+                </div>
+                <hr class="horizontal">
+                <script src="script.js"></script>
+            </div>
+
+            <h2 class="tittle">More details</h2>
+            
+            <div class="row">
+                <div class="column">
+
+                    <div class="table-column">
+                        <div class="table-row">
+                            <p class="table-value">Property Type</p>
+                        </div>
+                        <div class="table-row">
+                            <p class="table-nextvalue">Condominium For Rent</p>
+                        </div>
+                    </div>
+
+                    <div class="table-column">
+                        <div class="table-row">
+                            <p class="table-value">Furnishing</p>
+                        </div>
+                        <div class="table-row">
+                            <p class="table-nextvalue">Fully Furnished</p>
+                        </div>
+                    </div>
+
+                    <div class="table-column">
+                        <div class="table-row">
+                            <p class="table-value">Developer</p>
+                        </div>
+                        <div class="table-row">
+                            <p class="table-nextvalue">OSK Property Holdings Berhad</p>
+                        </div>
+                    </div>
+
+                    <div class="table-column">
+                        <div class="table-row">
+                            <p class="table-value">Listed On</p>
+                        </div>
+                        <div class="table-row">
+                            <p class="table-nextvalue">15 Jan 2024</p>
+                        </div>
+                    </div>
+
+                    
+                    <div style="display: flex; align-items: center; margin: 40px 0px;">
+                        <img style="width: 50px; height: 50px; display: inline-block; margin-right: 30px;" src="image/rate.png">
+                        <div style="display: inline-block; width: 130px; height: 50px; margin-left: 23px;">
+                            <p style="margin: 3px 0px; text-align: center;">Project Review</p>
+                            <button class="btn" style="margin: 0; width: 130px;" onclick="gotoLink(this)" value="Solstice review.html">Show Review</button>
+                        </div>
+                    </div>
+                    
+
+                </div>
+
+                <div class="column">
+
+                    <div class="table-column">
+                        <div class="table-row">
+                            <p class="table-value">Floor Size</p>
+                        </div>
+                        <div class="table-row">
+                            <p class="table-nextvalue">450 sqft</p>
+                        </div>
+                    </div>
+
+                    <div class="table-column">
+                        <div class="table-row">
+                            <p class="table-value">PSF</p>
+                        </div>
+                        <div class="table-row">
+                            <p class="table-nextvalue">RM 2.67 psf</p>
+                        </div>
+                    </div>
+
+                    <div class="table-column">
+                        <div class="table-row">
+                            <p class="table-value">Tenure</p>
+                        </div>
+                        <div class="table-row">
+                            <p class="table-nextvalue">Freehold</p>
+                        </div>
+                    </div>
+
+                    <div class="table-column">
+                        <div class="table-row">
+                            <p class="table-value">Listing ID</p>
+                        </div>
+                        <div class="table-row">
+                            <p class="table-nextvalue">36607648</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <hr class="horizontal">
+
+            <h2 id="map" class="tittle">Amenities</h2>
+            <br>
+
+            <button class="btn" onclick="hideFacilities()"> Unit Features </button>
+            <button class="btn" onclick="hideUnitFeatures()"> Facilities </button>
+            
+            <div id="UnitFeatures">
+                <div class="row">
+                    <div class="column">
+                        <p>&#10004; &#160; &#160; Air-Conditioning</p>
+                        <p>&#10004; &#160; &#160; Washing Machine</p>
+                        <p>&#10004; &#160; &#160; Water Heater</p>
+                    </div>
+
+                    <div class="column">
+                        <p>&#10004; &#160; &#160; Cooker Hob/Hood</p>
+                        <p>&#10004; &#160; &#160; Fridge</p>
+                        <p>&#10004; &#160; &#160; High Floor</p>
+                    </div>
+                </div>
+            </div>
+
+            <div style="display: none;" id="Facilities1">
+                <div class="row">
+                    <div class="column">
+                        <div class="facilities">
+                            <img class="facilities-img" src="image/shuttlecock.png">
+                            <div class="facilities-text">
+                                <p>Badminton hall</p>
+                            </div>
+                        </div>
+    
+                        <div class="facilities">
+                            <img class="facilities-img" src="image/guard.png">
+                            <div class="facilities-text">
+                                <p>24 hours security</p>
+                            </div>
+                        </div>
+    
+                        <div class="facilities">
+                            <img class="facilities-img" src="image/barbecue.png">
+                            <div class="facilities-text">
+                                <p>Barbeque Area</p>
+                            </div>
+                        </div>
+                        <div class="facilities">
+                            <img class="facilities-img" src="image/praying.png">
+                            <div class="facilities-text">
+                                <p>Surau (Male & Female)</p>
+                            </div>
+                        </div>
+                        <div class="facilities">
+                            <img class="facilities-img" src="image/seesaw.png">
+                            <div class="facilities-text">
+                                <p>Playground</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="facilities">
+                            <img class="facilities-img" src="image/video-game.png">
+                            <div class="facilities-text">
+                                <p>Game room</p>
+                            </div>
+                        </div>
+    
+                        <div class="facilities">
+                            <img class="facilities-img" src="image/squash.png">
+                            <div class="facilities-text">
+                                <p>Squash court</p>
+                            </div>
+                        </div>
+    
+                        <div class="facilities">
+                            <img class="facilities-img" src="image/swim.png">
+                            <div class="facilities-text">
+                                <p>Swimming pool</p>
+                            </div>
+                        </div>
+                        <div class="facilities">
+                            <img class="facilities-img" src="image/treadmill.png">
+                            <div class="facilities-text">
+                                <p>Gymnasium room</p>
+                            </div>
+                        </div>
+                        <div class="facilities">
+                            <img class="facilities-img" src="image/sedan.png">
+                            <div class="facilities-text">
+                                <p>Covered car park</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="horizontal">
+            <h2 class="tittle">About the location</h2>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3984.6217983304346!2d101.6339972747293!3d2.924587397051755!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cdb6dd6b5d54d1%3A0x730e137b046ce8f!2sSolstice%20%40%20Pan&#39;gaea!5e0!3m2!1sen!2smy!4v1705331520143!5m2!1sen!2smy" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <hr class="horizontal">
+            <div class="containercal">
+                <h1>Loan Calculator</h1>
+                <p>Loan Amount RM
+                    <input onchange="calculateLoan()" class="input" type="number" id="loan-amount" min="1" max="500000" value="10000">
+                </p>
+                <p>Interest Rate %
+                    <input onchange="calculateLoan()" class="input" type="number" id="interest-rate" min="0" max="100" value="10" step=".1">
+                </p>
+                <p>Months to pay
+                    <input onchange="calculateLoan()" class="input" type="number" id="months-to-pay" min="6" max="48" value="12">
+                </p>
+                <p class="payment" id="payment">Monthly Payment:</p>
+            </div>
+        </div>
+
+        <div class="column-main" style="padding: 0px; margin-top: 40px;  height: 1900px; ">
+            <nav class="navBar">
+                <span><i class="fa fa-share" aria-hidden="true"></i> Share</span>
+                <span><i class="fa fa-heart" aria-hidden="true"></i> Like</span>
+                <span><i class="fa fa-eye-slash" aria-hidden="true"></i> Hide</span>
+                <span><i class="fa fa-flag" aria-hidden="true"></i> Report</span>
+            </nav>
+            
+            <!-- agent consult -->
+            <div class="agent-section">
+                <div class="company">
+                    <img src="image/CLOGO.131211928.V120.jpg" width="48px" height="33px" >
+                    <span>Affirm Plus Properties Sdn. Bhd.</span>
+                </div>
+
+                <div class="agent-info">
+                    <img class="agent-detail" src="image/APHO.165744246.V120B.jpg">
+                    <div class="agent-detail">
+                        <p style="font-size: 14px; font-weight: bold;">Keng.</p>
+                        <p style="font-size: 12px; color: #999999;">REN: 25152</p>
+                        <p style="font-size: 12px; color: #999999;">Agency Reg. No. E (1) 1693</p>
+
+                    </div>
+                </div>
+
+                    <a style="color: #505050;" href="https://wa.me/0175114351">
+                        <div class="button">
+                            <img style="vertical-align: center; margin-left: 70px;" src="image/social.png" width="20px" height="20px"> 
+                            <span style="line-height: 2px; height: 20px; margin-left: 5px;"> Whatsapp</span>
+                        </div>
+                    </a>
+                    
+                    <a style="color: #505050;" href="tel:0175114351">
+                        <div class="button">
+                            <img style="vertical-align: center; margin-left: 50px;" src="image/telephone.png" width="20px" height="20px"> 
+                            <span style="line-height: 2px; height: 20px; margin-left: 5px;"> View Phone Number</span>
+                        </div>
+                    </a>
+                    
+                    <a style="color: #505050;" href="https://wa.me/0175114351">
+                        <div class="button">
+                            <img style="vertical-align: center; margin-left: 70px;" src="image/mail.png" width="20px" height="20px"> 
+                            <span style="line-height: 2px; height: 20px; margin-left: 5px;"> Send Enquiry</span>
+                        </div>
+                    </a>
+
+                    <div>
+                        <p style="width: 258px; margin: auto; font-size: 14px; color: #505050; margin-top: 16px;">I confirm that I have read the <span style="color: red;">privacy policy</span> and allow my information to be shared with this agent who may contact me later.</p>
+                        <i style="font-size: 8px; margin-top: 60px; margin-left: 30px; margin-bottom: 40px;" class="fa fa-video-camera" aria-hidden="true"> LIVE TOUR</i> 
+                        <span style="font-size: 11px; color: #505050; margin-left: 10px; margin-right: 30px;">Get in touch with the agent to arrange.</span>
+                    </div>
+
+    
+                </div>
+            </div>
+        </div>
+        <footer class="footer">
+
+            <section class="flex">
+         
+               <div class="box">
+                  <a style="font-size: 18px" href="tel:01234567890"><i class="fas fa-phone"></i><span>01234567890</span></a>
+                  <a style="font-size: 18px" href="tel:01234567890"><i class="fas fa-phone"></i><span>60324680123</span></a>
+                  <a style="font-size: 18px" href="mailto:shaikhanas@gmail.com"><i class="fas fa-envelope"></i><span>blabla@gmail.com</span></a>
+                  <a style="font-size: 18px" href="https://www.google.com/maps/search/mmu+cyberjaya/@2.9265004,101.6395575,17z/data=!3m1!4b1?entry=ttu"><i class="fas fa-map-marker-alt"></i><span>Persiaran Multimedia, 63100 <br>&emsp;&ensp;&ensp;Cyberjaya, Selangor </span></a>
+                  
+               </div>
+         
+               <div class="box">
+                  <a style="font-size: 18px" href="home.html"><span>Home</span></a>
+                  <a style="font-size: 18px" href="about.html"><span>About Us</span></a>
+                  <a style="font-size: 18px" href="contact.html"><span>Contact Us</span></a>
+                  <a style="font-size: 18px" href="privacy.html"><span>Privacy Policy</span></a>
+                  <a style="font-size: 18px" href="terms.html"><span>Terms & Condition</span></a>
+               </div>
+         
+               <div class="box">
+                  <a style="font-size: 18px" href="https://www.facebook.com/yansheng0405"><span>facebook</span><i class="fab fa-facebook-f"></i></a>
+                  <a style="font-size: 18px" href="https://twitter.com/?lang=en"><span>twitter</span><i class="fab fa-twitter"></i></a>
+                  <a style="font-size: 18px"  href="https://wa.me/01234567890"><span>whatsapp</span><i class="fab fa-whatsapp"></i></a>
+                  <a style="font-size: 18px" href="https://www.instagram.com/soonkeattt__/"><span>instagram</span><i class="fab fa-instagram"></i></a>
+                  <a style="font-size: 18px" href="cookies.html"><span>cookies</span><i class="fa-solid fa-cookie"></i></a>
+         
+               </div>
+         
+            </section>
+         
+            <div style="font-size: 18px" class="credit">&copy; copyright @ 2022 by <span ><a style="font-size: 18px; color: red;" href=home.html>Bla Bla</a></span> | all rights reserved!</div>
+         
+         </footer>
+
+            <script>
+                var div1 = document.getElementById('Facilities1');
+                var div2 = document.getElementById('UnitFeatures');
+                var display = 0;
+            
+                function hideFacilities() {
+                    if (display == 1) {
+                        div1.style.display = 'none';
+                        div2.style.display = 'block';
+                        display = 0;
+                    } else {
+                        div1.style.display = 'none';
+                        div2.style.display = 'block';
+                        display = 1;
+                    }
+                }
+
+                function hideUnitFeatures() {
+                    if (display == 1) {
+                        div2.style.display = 'none';
+                        div1.style.display = 'block';
+                        display = 0;
+                    } else {
+                        div2.style.display = 'none';
+                        div1.style.display = 'block';
+                        display = 1;
+                    }
+                }
+
+                function gotoLink(link){
+                    console.log(link.value);
+                    location.href = link.value;
+                }
+
+                function popup(){
+                    document.getElementById('comfirm-container-popup').style.display = 'block';
+                    var box = document.querySelector('.agent-section');
+                    box.style.borderColor = '#101010'
+                    var verticalLine = document.querySelector('.vertical');
+                    verticalLine.style.borderColor = 'darkgrey';
+                    box.style.visibility = 'hidden';
+                }
+                document.getElementById('closs').addEventListener('click', function(){
+                    document.getElementById('comfirm-container-popup').style.display = 'none';
+                    var box = document.querySelector('.agent-section');
+                    box.style.borderColor = 'grey'
+                    var verticalLine = document.querySelector('.vertical');
+                    verticalLine.style.borderColor = 'white';
+                    box.style.visibility = 'visible';
+                })
+
+                function calculateLoan() {
+                loanAmountValue = document.getElementById("loan-amount").value;
+
+                interestRateValue = document.getElementById("interest-rate").value;
+
+                MonthsToPayValue = document.getElementById("months-to-pay").value;
+
+                interest = (loanAmountValue * (interestRateValue * 0.01)) / MonthsToPayValue;
+
+                monthlyPayment = (loanAmountValue / MonthsToPayValue + interest).toFixed(2);
+
+                document.getElementById(
+                    "payment"
+                ).innerHTML = `Monthly Payment: ${monthlyPayment}`;
+                }
+
+
+            </script>
+
+
+
+            
+        </div>
+    </div>
+    
+</body>
+</html>

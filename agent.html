@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Home</title>
+
+   <link href="img/favicon.ico" rel="icon">
+   <!-- font awesome cdn link  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+   <!-- custom css file link  -->
+   <link rel="stylesheet" href="css/style.css">
+
+   <style>
+    main h2{
+        font-family : Verdana, sans-serif;
+        color: rgb(49, 63, 113);
+        font-size: 50px;
+    }
+    main h3{
+        color :rgb(43, 57, 110);
+        font-size: 25px;
+    }
+
+    .collapsible {
+        background-color: #c96464;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        color: #f9f4f4;
+        cursor: pointer;
+        padding: 20px;
+        width: 100%;
+        border: none;
+        text-align: left;
+        font-size: 19px;
+        border : 1px solid #f2eded;
+        margin-bottom: 1px;
+        border-radius: 2px;
+    }
+
+    .active, .collapsible:hover{
+        background-color: #f51a1a;
+        color : rgb(190, 160, 160);
+    }
+
+    .content {
+        padding: 18px;
+        display: none;
+        overflow: hidden;
+        background-color: #f1f1f1;
+        align-items: center;
+        border : 2px solid black;
+        border-radius : 20px;
+    }
+
+    .content p{
+        color : black;
+        margin : 0;
+    }
+    
+    .content img{
+        width : 100px;
+        height : 100px;
+        border: 0;
+        background: white;
+        border-radius : 50%;
+        margin-right: 20px;
+        cursor : pointer;
+    }
+
+    .content h3{
+        font-size : 16px;
+    }
+
+    .content h4{
+        font-size : 16px;
+    }
+
+    .content p{
+        font-size : 13px;
+    }
+    hr{
+        margin-top: 15px;
+        border-top: 1px solid black;
+    }
+
+    </style>
+</head>
+<body>
+   
+       
+   <!-- header section starts  -->
+
+<header class="header">
+
+    <nav class="navbar nav-1">
+       <section class="flex">
+          <a href="home.html" class="logo"><i class="fas fa-house"></i>Bla Bla</a>
+       </section>
+    </nav>
+ 
+    <nav class="navbar nav-2">
+       <section class="flex">
+          <div id="menu-btn" class="fas fa-bars"></div>
+ 
+          <div class="menu">
+             <ul>
+                <li><a href="buy.html">BUY </a></li>
+                <li><a href="rent.html">RENT </a></li>
+                <li><a href="new.html">NEW LAUNCHES </a></li>
+                <li><a href="agent.html" class="active">FIND AGENT </a></li>
+                <li><a href="#">COMMUNITY</a>
+                   <ul>
+                      <li><a href="feedback.html">FEEDBACK</a></li>
+                      <li><a href="testimonial.html">TESTIMONIAL</a></li>
+                   </ul>
+                </li>
+                <li><a href="#">HELP<i class="fas fa-angle-down"></i></a>
+                   <ul>
+                      <li><a href="about.html">about us</a></i></li>
+                      <li><a href="contact.html">contact us</a></i></li>
+                      <li><a href="faq.html">FAQ</a></i></li>
+                   </ul>
+                </li>
+             </ul>
+          </div>
+ 
+          <ul>
+             <li><a href="#">account <i class="fas fa-angle-down"></i></a>
+                <ul>
+                   <li><a href="login.html">login</a></li>
+                   <li><a href="register.html">register</a></li>
+                </ul>
+             </li>
+          </ul>
+       </section>
+    </nav>
+ 
+ </header>
+ 
+ <!-- header section ends -->
+
+<main>
+<h2>Find An Agent</h2>
+
+		<h4 style="font-size: 30px; color: #180d0d;">Browse By Region :</h4>
+		<button type="button" class="collapsible">Selangor</button>
+		<div class="content">
+		<div style="float: left; margin-right: 20px;">
+        <img src="agent/agent2.jfif" alt="Agent2">
+		</div>
+		<div style="float: left;">
+			<h4>Andrew Tate</h4>
+			<p><b>TOP G SDN. BHD</b></p>
+			<p>Contact Number: +0164554245</p>
+			<p>WhatsApp: +0164554245</p>
+			<p>Email: andrew@gmail.com</p>
+            <h4>Area : Subang Jaya</h4>
+		</div>
+		<div style="clear: both;"></div>
+		<hr>
+		<div style="margin-top: 20px;">
+        <div style="float: left; margin-right: 20px;">
+        <img src="agent/agent1.webp" alt="Agent1">
+        </div>
+        <div style="float: left;">
+            <h4>Ahmad Ali</h4>
+            <p><b>THAT ROOF REALTY SDN. BHD.</b></p>
+            <p>Contact Number: +0124245771</p>
+            <p>WhatsApp: +0124245771</p>
+            <p>Email: ahmad@gmail.com</p>
+            <h4>Area : Cyberjaya</h4>
+        </div>
+        <div style="clear: both;"></div>
+		<hr>
+		</div>
+			<div style="margin-top: 20px;">
+        <div style="float: left; margin-right: 20px;">
+        <img src="agent/agent3.jfif" alt="Agent3">
+        </div>
+        <div style="float: left;">
+            <h4>Kante</h4>
+            <p><b>Real Estate Negotiator at POWER HOME REALTY</b></p>
+            <p>Contact Number: +0142548941</p>
+            <p>WhatsApp: +0142548941</p>
+            <p>Email: kante@gmail.com</p>
+            <h4>Area : Petaling Jaya</h4>
+        </div>
+        <div style="clear: both;"></div>
+		</div>
+		</div>
+
+		
+		<button type="button" class="collapsible">Kuala Lumpur</button>
+		<div class="content">
+		<div style="float: left; margin-right: 20px;">
+        <img src="agent/agent4.webp" alt="Agent4">
+		</div>
+		<div style="float: left;">
+			<h4>Tristan Tate</h4>
+			<p><b>TOP G SDN. BHD</b></p>
+			<p>Contact Number: +0133844545</p>
+			<p>WhatsApp: +0133844545</p>
+			<p>Email: tristan@gmail.com</p>
+            <h4>Area : Bukit Bintang</h4>
+		</div>
+		<div style="clear: both;"></div>
+		<hr>
+		<div style="margin-top: 20px;">
+        <div style="float: left; margin-right: 20px;">
+        <img src="agent/agent5.jfif" alt="Agent5">
+        </div>
+        <div style="float: left;">
+            <h3>Jason Choo</h3>
+            <p><b>Real Estate Negotiator at POWER HOME REALTY</b></p>
+            <p>Contact Number: +0151248665</p>
+            <p>WhatsApp: +0151248665</p>
+            <p>Email: jason@gmail.com</p>
+            <h4>Area : Bukit Jalil</h4>
+        </div>
+        <div style="clear: both;"></div>
+		<hr>
+		</div>
+				<div style="margin-top: 20px;">
+        <div style="float: left; margin-right: 20px;">
+        <img src="agent/agent6.jfif" alt="Agent6">
+        </div>
+        <div style="float: left;">
+            <h4>Sanjeet Raj</h4>
+            <p><b>Real Estate Negotiator at POWER HOME REALTY</b></p>
+            <p>Contact Number: +0168454236</p>
+            <p>WhatsApp: +0168454236</p>
+            <p>Email: sanjeet@gmail.com</p>
+            <h4>Area : Cheras</h4>
+        </div>
+        <div style="clear: both;"></div>
+		</div>
+		</div>
+		
+		<button type="button" class="collapsible">Kedah</button>
+		<div class="content">
+		<div style="float: left; margin-right: 20px;">
+        <img src="agent/agent7.png" alt="Agent7">
+		</div>
+		<div style="float: left;">
+			<h4>Alan Lee</h4>
+			<p><b>VPG REALTY</b></p>
+			<p>Contact Number: +0112546884</p>
+			<p>WhatsApp: +0112546884</p>
+			<p>Email: alan@gmail.com</p>
+            <h4>Area : Sungai Petani</h4>
+		</div>
+		<div style="clear: both;"></div>
+		<hr>
+		<div style="margin-top: 20px;">
+        <div style="float: left; margin-right: 20px;">
+        <img src="agent/agent8.png" alt="Agent8">
+        </div>
+        <div style="float: left;">
+            <h4>Sergio Ramos</h4>
+            <p><b>VPG REALTY</b></p>
+            <p>Contact Number: +0153695113</p>
+            <p>WhatsApp: +0153695113</p>
+            <p>Email: sergioramos@gmail.com</p>
+            <h4>Area : Alor Setar</h4>
+        </div>
+        <div style="clear: both;"></div>
+		<hr>
+		</div>
+			<div style="margin-top: 20px;">
+        <div style="float: left; margin-right: 20px;">
+        <img src="agent/agent9.jfif" alt="Agent9">
+        </div>
+        <div style="float: left;">
+            <h4>Sarvin Kumar</h4>
+            <p><b>VPG REALTY</b></p>
+            <p>Contact Number: +0175385338</p>
+            <p>WhatsApp: +0175385338</p>
+            <p>Email: sarvinkumar@gmail.com</p>
+            <h4>Area : Gurun</h4>
+        </div>
+        <div style="clear: both;"></div>
+		</div>
+		</div>
+		
+		<button type="button" class="collapsible">Johor</button>
+		<div class="content">
+		<div style="float: left; margin-right: 20px;">
+        <img src="agent/agent10.jfif" alt="Agent10">
+		</div>
+		<div style="float: left;">
+			<h4>Jocelyn Chia</h4>
+			<p><b>TOP G SDN. BHD</b></p>
+			<p>Contact Number: +0136545946</p>
+			<p>WhatsApp: +0136545946</p>
+			<p>Email: jocelynchia123@gmail.com</p>
+            <h4>Area : Johor Bahru</h4>
+		</div>
+		<div style="clear: both;"></div>
+		<hr>
+		<div style="margin-top: 20px;">
+        <div style="float: left; margin-right: 20px;">
+        <img src="agent/agent11.jfif" alt="Agent11">
+        </div>
+        <div style="float: left;">
+            <h4>Jessica Chua</h4>
+            <p><b>TOP G SDN. BHD</b></p>
+            <p>Contact Number: +0148596114</p>
+            <p>WhatsApp: +0148596114</p>
+            <p>Email: jessica1212@gmail.com</p>
+            <h4>Area : Muar</h4>
+        </div>
+        <div style="clear: both;"></div>
+		<hr>
+		</div>
+			<div style="margin-top: 20px;">
+        <div style="float: left; margin-right: 20px;">
+        <img src="agent/agent12.jpg" alt="Agent12">
+        </div>
+        <div style="float: left;">
+            <h4>Kris Wu</h4>
+            <p><b>Real Estate Negotiator at POWER HOME REALTY</b></p>
+            <p>Contact Number: +0124578446</p>
+            <p>WhatsApp: +0124578446</p>
+            <p>Email: kriswu@gmail.com</p>
+            <h4>Area : Tebrau</h4>
+        </div>
+        <div style="clear: both;"></div>
+		</div>
+		</div>
+		
+		<button type="button" class="collapsible">Melaka</button>
+		<div class="content">
+		<div style="float: left; margin-right: 20px;">
+        <img src="agent/agent13.jfif" alt="Agent13">
+		</div>
+		<div style="float: left;">
+			<h4>Yugendra Rao</h4>
+			<p><b>Real Estate Negotiator at POWER HOME REALTY</b></p>
+			<p>Contact Number: +0145614556</p>
+			<p>WhatsApp: +0145614556</p>
+			<p>Email: yugendrarao@gmail.com</p>
+            <h4>Area : Ayer Keroh</h4>
+		</div>
+		<div style="clear: both;"></div>
+		<hr>
+		<div style="margin-top: 20px;">
+        <div style="float: left; margin-right: 20px;">
+        <img src="agent/agent14.jpg" alt="Agent14">
+        </div>
+        <div style="float: left;">
+            <h4>Jack Ma</h4>
+            <p><b>Real Estate Negotiator at POWER HOME REALTY</b></p>
+            <p>Contact Number: +0178454775</p>
+            <p>WhatsApp: +0178454775</p>
+            <p>Email: jackma888@gmail.com</p>
+            <h4>Area : Malacca City Centre</h4>
+        </div>
+        <div style="clear: both;"></div>
+		<hr>
+		</div>
+			<div style="margin-top: 20px;">
+        <div style="float: left; margin-right: 20px;">
+        <img src="agent/agent15.jfif" alt="Agent15">
+        </div>
+        <div style="float: left;">
+            <h4>Lim Chun Yip</h4>
+            <p><b>THAT ROOF REALTY SDN. BHD.</b></p>
+            <p>Contact Number: +0115424336</p>
+            <p>WhatsApp: +0115424336</p>
+            <p>Email: chunyip1011@gmail.com</p>
+            <h4>Area : Malacca City Centre</h4>
+        </div>
+        <div style="clear: both;"></div>
+		</div>
+		</div>
+		
+		<button type="button" class="collapsible">Kelantan</button>
+		<div class="content">
+		<div style="float: left; margin-right: 20px;">
+        <img src="agent/agent16.jfif" alt="Agent16">
+		</div>
+		<div style="float: left;">
+			<h4>Mary Leong</h4>
+			<p><b>THAT ROOF REALTY SDN. BHD.</b></p>
+			<p>Contact Number: +0145156884</p>
+			<p>WhatsApp: +0145156884</p>
+			<p>Email: maryleong@gmail.com</p>
+            <h4>Area : Kota Baharu</h4>
+		</div>
+		<div style="clear: both;"></div>
+		<hr>
+		<div style="margin-top: 20px;">
+        <div style="float: left; margin-right: 20px;">
+        <img src="agent/agent17.jfif" alt="Agent17">
+        </div>
+        <div style="float: left;">
+            <h4>Selene Lim</h4>
+            <p><b>THAT ROOF REALTY SDN. BHD.</b></p>
+            <p>Contact Number: +0145661755</p>
+            <p>WhatsApp: +0145661755</p>
+            <p>Email: selene@gmail.com</p>
+            <h4>Area : Kota Baharu</h4>
+        </div>
+        <div style="clear: both;"></div>
+		<hr>
+		</div>
+			<div style="margin-top: 20px;">
+        <div style="float: left; margin-right: 20px;">
+        <img src="agent/agent18.png" alt="Agent18">
+        </div>
+        <div style="float: left;">
+            <h4>Stevan Raj</h4>
+            <p><b>Real Estate Negotiator at POWER HOME REALTY</b></p>
+            <p>Contact Number: +0124245668</p>
+            <p>WhatsApp: +0124245668</p>
+            <p>Email: stevanraj@gmail.com</p>
+            <h4>Area : Kota Baharu</h4>
+        </div>
+        <div style="clear: both;"></div>
+		</div>
+		</div>
+		
+		<button type="button" class="collapsible">Perlis</button>
+		<div class="content">
+		<div style="float: left; margin-right: 20px;">
+        <img src="agent/agent19.jpg" alt="Agent19">
+		</div>
+		<div style="float: left;">
+			<h4>Marcus Chin</h4>
+			<p><b>Real Estate Negotiator at POWER HOME REALTY</b></p>
+			<p>Contact Number: +0115456223</p>
+			<p>WhatsApp: +0115456223</p>
+			<p>Email: marcus@gmail.com</p>
+            <h4>Area : Kangar</h4>
+		</div>
+		<div style="clear: both;"></div>
+		<hr>
+		<div style="margin-top: 20px;">
+        <div style="float: left; margin-right: 20px;">
+        <img src="agent/agent20.jpg" alt="Agent20">
+        </div>
+        <div style="float: left;">
+            <h4>Adin Ross</h4>
+            <p><b>TOP G SDN. BHD</b></p>
+            <p>Contact Number: +0152145663</p>
+            <p>WhatsApp: +0152145663</p>
+            <p>Email: adinross@gmail.com</p>
+            <h4>Area : Kangar</h4>
+        </div>
+        <div style="clear: both;"></div>
+		<hr>
+		</div>
+			<div style="margin-top: 20px;">
+        <div style="float: left; margin-right: 20px;">
+        <img src="agent/agent21.jfif" alt="agent21">
+        </div>
+        <div style="float: left;">
+            <h4>Lee Chin Min</h4>
+            <p><b>TOP G SDN. BHD</b></p>
+            <p>Contact Number: +0151624883</p>
+            <p>WhatsApp: +0151624883</p>
+            <p>Email: lcm1212@gmail.com</p>
+            <h4>Area : Kangar</h4>
+        </div>
+        <div style="clear: both;"></div>
+		</div>
+		</div>
+		
+		<button type="button" class="collapsible">Penang</button>
+		<div class="content">
+		<div style="float: left; margin-right: 20px;">
+        <img src="agent/agent22.jpeg" alt="Agent22">
+		</div>
+		<div style="float: left;">
+			<h4>Tharshan Raj</h4>
+			<p><b>Super property SDN. BHD</b></p>
+			<p>Contact Number: +0124548776</p>
+			<p>WhatsApp: +0124548776</p>
+			<p>Email: tharshan@gmail.com</p>
+            <h4>Area : George Town</h4>
+		</div>
+		<div style="clear: both;"></div>
+		<hr>
+		<div style="margin-top: 20px;">
+        <div style="float: left; margin-right: 20px;">
+        <img src="agent/agent23.jfif" alt="Agent23">
+        </div>
+        <div style="float: left;">
+            <h4>Madison Hu</h4>
+            <p><b>Super property SDN. BHD</b></p>
+            <p>Contact Number: +0156245225</p>
+            <p>WhatsApp: +0156245225</p>
+            <p>Email: madison@gmail.com</p>
+            <h4>Area : Jelutong</h4>
+        </div>
+        <div style="clear: both;"></div>
+		<hr>
+		</div>
+			<div style="margin-top: 20px;">
+        <div style="float: left; margin-right: 20px;">
+        <img src="agent/agent24.jfif" alt="Agent24">
+        </div>
+        <div style="float: left;">
+            <h4>Mohammed Ali</h4>
+            <p><b>Super property SDN. BHD</b></p>
+            <p>Contact Number: +0134546887</p>
+            <p>WhatsApp: +0134546887</p>
+            <p>Email: mohdali@gmail.com</p>
+            <h4>Area : George Town</h4>
+        </div>
+        <div style="clear: both;"></div>
+		</div>
+		</div>
+		
+		<button type="button" class="collapsible">Pahang</button>
+		<div class="content">
+		<div style="float: left; margin-right: 20px;">
+        <img src="agent/agent50.webp" alt="Agent50">
+		</div>
+		<div style="float: left;">
+			<h4>Mac Tate</h4>
+			<p><b>TOP G SDN. BHD</b></p>
+			<p>Contact Number: +0164554245</p>
+			<p>WhatsApp: +0164554245</p>
+			<p>Email: mac@gmail.com</p>
+            <h4>Area : Kuantan</h4>
+		</div>
+		<div style="clear: both;"></div>
+		<hr>
+		<div style="margin-top: 20px;">
+        <div style="float: left; margin-right: 20px;">
+        <img src="agent/agent25.jfif" alt="Agent25">
+        </div>
+        <div style="float: left;">
+            <h4>Davesh Sharma</h4>
+            <p><b>TOP G SDN. BHD</b></p>
+            <p>Contact Number: +0165454876</p>
+            <p>WhatsApp: +0165454876</p>
+            <p>Email: davesh@gmail.com</p>
+            <h4>Area : Kuantan</h4>
+        </div>
+        <div style="clear: both;"></div>
+		<hr>
+		</div>
+			<div style="margin-top: 20px;">
+        <div style="float: left; margin-right: 20px;">
+        <img src="agent/agent26.jfif" alt="Agent26">
+        </div>
+        <div style="float: left;">
+            <h4>Mohammed Ahmad</h4>
+            <p><b>Real Estate Negotiator at POWER HOME REALTY</b></p>
+            <p>Contact Number: +0158461554</p>
+            <p>WhatsApp: +0158461554</p>
+            <p>Email: mohammedahmad@gmail.com</p>
+            <h4>Area : Kuantan</h4>
+        </div>
+        <div style="clear: both;"></div>
+		</div>
+		</div>
+		
+		<button type="button" class="collapsible">Sabah</button>
+		<div class="content">
+		<div style="float: left; margin-right: 20px;">
+        <img src="agent/agent27.jfif" alt="Agent27">
+		</div>
+		<div style="float: left;">
+			<h4>Mohammed Salah</h4>
+			<p><b>Liverpool SDN. BHD</b></p>
+			<p>Contact Number: +0123451245</p>
+			<p>WhatsApp: +0123451245</p>
+			<p>Email: salah10@gmail.com</p>
+            <h4>Area : Kota Kinabalu</h4>
+		</div>
+		<div style="clear: both;"></div>
+		<hr>
+		<div style="margin-top: 20px;">
+        <div style="float: left; margin-right: 20px;">
+        <img src="agent/agent28.jpg" alt="Agent28">
+        </div>
+        <div style="float: left;">
+            <h4>Cristiano Ronaldo</h4>
+            <p><b>Manchester United SDN. BHD.</b></p>
+            <p>Contact Number: +0179267923</p>
+            <p>WhatsApp: +0179267923</p>
+            <p>Email: cr7@gmail.com</p>
+            <h4>Area : Kota Kinabalu</h4>
+        </div>
+        <div style="clear: both;"></div>
+		<hr>
+		</div>
+			<div style="margin-top: 20px;">
+        <div style="float: left; margin-right: 20px;">
+        <img src="agent/agent29.jpg" alt="Agent29">
+        </div>
+        <div style="float: left;">
+            <h4>Leo Messi</h4>
+            <p><b>Barcelona Paris Saint German Property</b></p>
+            <p>Contact Number: +0171030103</p>
+            <p>WhatsApp: +0171030103</p>
+            <p>Email: leomessi10@gmail.com</p>
+            <h4>Area : Kota Kinabalu</h4>
+        </div>
+        <div style="clear: both;"></div>
+		</div>
+		</div>
+		
+		<button type="button" class="collapsible">Sarawak</button>
+		<div class="content">
+		<div style="float: left; margin-right: 20px;">
+        <img src="agent/agent30.jfif" alt="Agent30">
+		</div>
+		<div style="float: left;">
+			<h4>Neymar jr.</h4>
+			<p><b>Brazillian SDN. BHD</b></p>
+			<p>Contact Number: +0197845137</p>
+			<p>WhatsApp: +0197845137</p>
+			<p>Email: neymar10@gmail.com</p>
+            <h4>Area : Kuching</h4>
+		</div>
+		<div style="clear: both;"></div>
+		<hr>
+		<div style="margin-top: 20px;">
+        <div style="float: left; margin-right: 20px;">
+        <img src="agent/agent31.webp" alt="Agent31">
+        </div>
+        <div style="float: left;">
+            <h4>Siti Hasmah</h4>
+            <p><b>Super property SDN. BHD</b></p>
+            <p>Contact Number: +0174512369</p>
+            <p>WhatsApp: +0174512369</p>
+            <p>Email: sitisiti@gmail.com</p>
+            <h4>Area : Kuching</h4>
+        </div>
+        <div style="clear: both;"></div>
+		<hr>
+		</div>
+			<div style="margin-top: 20px;">
+        <div style="float: left; margin-right: 20px;">
+        <img src="agent/agent32.webp" alt="Agent32">
+        </div>
+        <div style="float: left;">
+            <h4>Atiqah</h4>
+            <p><b>THAT ROOF REALTY SDN. BHD.</b></p>
+            <p>Contact Number: +0192546112</p>
+            <p>WhatsApp: +0192546112</p>
+            <p>Email: atiqah@gmail.com</p>
+            <h4>Area : Kuching</h4>
+        </div>
+        <div style="clear: both;"></div>
+		</div>
+		</div>
+		
+		<button type="button" class="collapsible">Terengganu</button>
+		<div class="content">
+		<div style="float: left; margin-right: 20px;">
+        <img src="agent/agent33.jfif" alt="Agent33">
+		</div>
+		<div style="float: left;">
+			<h4>Pavitren Rao</h4>
+			<p><b>THAT ROOF REALTY SDN. BHD.</b></p>
+			<p>Contact Number: +0132545664</p>
+			<p>WhatsApp: +0132545664</p>
+			<p>Email: pavitren@gmail.com</p>
+            <h4>Area : Kuala Terengganu</h4>
+		</div>
+		<div style="clear: both;"></div>
+		<hr>
+		<div style="margin-top: 20px;">
+        <div style="float: left; margin-right: 20px;">
+        <img src="agent/agent34.jpg" alt="Agent34">
+        </div>
+        <div style="float: left;">
+            <h4>Amiru Ali</h4>
+            <p><b>THAT ROOF REALTY SDN. BHD.</b></p>
+            <p>Contact Number: +0135541626</p>
+            <p>WhatsApp: +0135541626</p>
+            <p>Email: amiruali@gmail.com</p>
+            <h4>Area : Kuala Terengganu</h4>
+        </div>
+        <div style="clear: both;"></div>
+		<hr>
+		</div>
+			<div style="margin-top: 20px;">
+        <div style="float: left; margin-right: 20px;">
+        <img src="agent/agent35.jpg" alt="Agent35">
+        </div>
+        <div style="float: left;">
+            <h4>Mohammed Adam</h4>
+            <p><b>Real Estate Negotiator at POWER HOME REALTY</b></p>
+            <p>Contact Number: +0162524331</p>
+            <p>WhatsApp: +0162524331</p>
+            <p>Email: adam@gmail.com</p>
+            <h4>Area : Kuala Terengganu</h4>
+        </div>
+        <div style="clear: both;"></div>
+		</div>
+		</div>
+		
+		<button type="button" class="collapsible">Putrajaya</button>
+		<div class="content">
+		<div style="float: left; margin-right: 20px;">
+        <img src="agent/agent37.png" alt="Agent37">
+		</div>
+		<div style="float: left;">
+			<h4>Abu Kumar</h4>
+			<p><b>Real Estate Negotiator at POWER HOME REALTY</b></p>
+			<p>Contact Number: +0136511442</p>
+			<p>WhatsApp: +0136511442</p>
+			<p>Email: Abu@gmail.com</p>
+            <h4>Area : Presint 10</h4>
+		</div>
+		<div style="clear: both;"></div>
+		<hr>
+		<div style="margin-top: 20px;">
+        <div style="float: left; margin-right: 20px;">
+        <img src="agent/agent36.png" alt="Agent36">
+        </div>
+        <div style="float: left;">
+            <h4>Mugendra Raj</h4>
+            <p><b>Real Estate Negotiator at POWER HOME REALTY</b></p>
+            <p>Contact Number: +0135451247</p>
+            <p>WhatsApp: +0135451247</p>
+            <p>Email: mugendra@gmail.com</p>
+            <h4>Area : Presint 12</h4>
+        </div>
+        <div style="clear: both;"></div>
+		<hr>
+		</div>
+			<div style="margin-top: 20px;">
+        <div style="float: left; margin-right: 20px;">
+        <img src="agent/agent38.jfif" alt="Agent38">
+        </div>
+        <div style="float: left;">
+            <h4>Sally Lin</h4>
+            <p><b>THAT ROOF REALTY SDN. BHD.</b></p>
+            <p>Contact Number: +0115423665</p>
+            <p>WhatsApp: +0115423665</p>
+            <p>Email: sallylin@gmail.com</p>
+            <h4>Area : Presint 13</h4>
+        </div>
+        <div style="clear: both;"></div>
+		</div>
+		</div>
+		
+		<button type="button" class="collapsible">Negeri Sembilan</button>
+		<div class="content">
+		<div style="float: left; margin-right: 20px;">
+        <img src="agent/agent39.jpg" alt="Agent39">
+		</div>
+		<div style="float: left;">
+			<h4>James Law</h4>
+			<p><b>THAT ROOF REALTY SDN. BHD.</b></p>
+			<p>Contact Number: +0145124556</p>
+			<p>WhatsApp: +0145124556</p>
+			<p>Email: jameslaw@gmail.com</p>
+            <h4>Area : Seremban</h4>
+		</div>
+		<div style="clear: both;"></div>
+		<hr>
+		<div style="margin-top: 20px;">
+        <div style="float: left; margin-right: 20px;">
+        <img src="agent/agent40.jpg" alt="Agent40">
+        </div>
+        <div style="float: left;">
+            <h4>Andy Lau</h4>
+            <p><b>Super property SDN. BHD</b></p>
+            <p>Contact Number: +0124356221</p>
+            <p>WhatsApp: +0124356221</p>
+            <p>Email: andylau@gmail.com</p>
+            <h4>Area : Seremban</h4>
+        </div>
+        <div style="clear: both;"></div>
+		<hr>
+		</div>
+			<div style="margin-top: 20px;">
+        <div style="float: left; margin-right: 20px;">
+        <img src="agent/agent41.jfif" alt="Agent41">
+        </div>
+        <div style="float: left;">
+            <h4>Micheal Chong</h4>
+            <p><b>Real Madrid Negotiator at POWER HOME REALTY</b></p>
+            <p>Contact Number: +0125414132</p>
+            <p>WhatsApp: +0125414132</p>
+            <p>Email: michael@gmail.com</p>
+            <h4>Area : Seremban</h4>
+        </div>
+        <div style="clear: both;"></div>
+		</div>
+		</div>
+		
+		<button type="button" class="collapsible">Labuan</button>
+		<div class="content">
+		<div style="float: left; margin-right: 20px;">
+        <img src="agent/agent43.png" alt="Agent43">
+		</div>
+		<div style="float: left;">
+			<h4>Kubendran Rao</h4>
+			<p><b>Real Madrid Negotiator at POWER HOME REALTY</b></p>
+			<p>Contact Number: +0165124556</p>
+			<p>WhatsApp: +0165124556</p>
+			<p>Email: kubendran@gmail.com</p>.
+            <h4>Area : Pulau Labuan</h4>
+		</div>
+		<div style="clear: both;"></div>
+		<hr>
+		<div style="margin-top: 20px;">
+        <div style="float: left; margin-right: 20px;">
+        <img src="agent/agent42.jfif" alt="Agent42">
+        </div>
+        <div style="float: left;">
+            <h4>Rebecca Wong</h4>
+            <p><b>Real Madrid Negotiator at POWER HOME REALTY</b></p>
+            <p>Contact Number: +0126541552</p>
+            <p>WhatsApp: +0126541552</p>
+            <p>Email: rebecca@gmail.com</p>
+            <h4>Area : Pulau Labuan</h4>
+        </div>
+        <div style="clear: both;"></div>
+		<hr>
+		</div>
+			<div style="margin-top: 20px;">
+        <div style="float: left; margin-right: 20px;">
+        <img src="agent/agent45.jfif" alt="Agent45">
+        </div>
+        <div style="float: left;">
+            <h4>Andrew Aguilar</h4>
+            <p><b>Real Madrid Negotiator at POWER HOME REALTY</b></p>
+            <p>Contact Number: +0115456221</p>
+            <p>WhatsApp: +0115456221</p>
+            <p>Email: andrew@gmail.com</p>
+            <h4>Area : Pulau Labuan</h4>
+        </div>
+        <div style="clear: both;"></div>
+		</div>
+		</div>
+        <button type="button" class="collapsible">Perak</button>
+		<div class="content">
+		<div style="float: left; margin-right: 20px;">
+        <img src="agent/agent43.png" alt="Agent43">
+		</div>
+		<div style="float: left;">
+			<h4>Kubendran Rao</h4>
+			<p><b>Real Madrid Negotiator at POWER HOME REALTY</b></p>
+			<p>Contact Number: +0165124556</p>
+			<p>WhatsApp: +0165124556</p>
+			<p>Email: kubendran@gmail.com</p>.
+            <h4>Area : Pulau Labuan</h4>
+		</div>
+		<div style="clear: both;"></div>
+		<hr>
+		<div style="margin-top: 20px;">
+        <div style="float: left; margin-right: 20px;">
+        <img src="agent/agent42.jfif" alt="Agent42">
+        </div>
+        <div style="float: left;">
+            <h4>Rebecca Wong</h4>
+            <p><b>Real Madrid Negotiator at POWER HOME REALTY</b></p>
+            <p>Contact Number: +0126541552</p>
+            <p>WhatsApp: +0126541552</p>
+            <p>Email: rebecca@gmail.com</p>
+            <h4>Area : Pulau Labuan</h4>
+        </div>
+        <div style="clear: both;"></div>
+		<hr>
+		</div>
+			<div style="margin-top: 20px;">
+        <div style="float: left; margin-right: 20px;">
+        <img src="agent/agent45.jfif" alt="Agent45">
+        </div>
+        <div style="float: left;">
+            <h4>Andrew Aguilar</h4>
+            <p><b>Real Madrid Negotiator at POWER HOME REALTY</b></p>
+            <p>Contact Number: +0115456221</p>
+            <p>WhatsApp: +0115456221</p>
+            <p>Email: andrew@gmail.com</p>
+            <h4>Area : Pulau Labuan</h4>
+        </div>
+        <div style="clear: both;"></div>
+		</div>
+		</div>
+    </main>
+
+ <!-- footer section starts  -->
+
+ <footer class="footer">
+
+    <section class="flex">
+ 
+       <div class="box">
+          <a href="tel:01234567890"><i class="fas fa-phone"></i><span>01234567890</span></a>
+          <a href="tel:01234567890"><i class="fas fa-phone"></i><span>60324680123</span></a>
+          <a href="mailto:shaikhanas@gmail.com"><i class="fas fa-envelope"></i><span>blabla@gmail.com</span></a>
+          <a href="https://www.google.com/maps/search/mmu+cyberjaya/@2.9265004,101.6395575,17z/data=!3m1!4b1?entry=ttu"><i class="fas fa-map-marker-alt"></i><span>Persiaran Multimedia, 63100 <br>&emsp;&ensp;Cyberjaya, Selangor </span></a>
+          
+       </div>
+ 
+       <div class="box">
+          <a href="home.html"><span>Home</span></a>
+          <a href="about.html"><span>About Us</span></a>
+          <a href="contact.html"><span>Contact Us</span></a>
+          <a href="privacy.html"><span>Privacy Policy</span></a>
+          <a href="terms.html"><span>Terms & Condition</span></a>
+       </div>
+ 
+       <div class="box">
+          <a href="https://www.facebook.com/yansheng0405"><span>facebook</span><i class="fab fa-facebook-f"></i></a>
+          <a href="https://twitter.com/?lang=en"><span>twitter</span><i class="fab fa-twitter"></i></a>
+          <a href="https://wa.me/01234567890"><span>whatsapp</span><i class="fab fa-whatsapp"></i></a>
+          <a href="https://www.instagram.com/soonkeattt__/"><span>instagram</span><i class="fab fa-instagram"></i></a>
+          <a href="cookies.html"><span>cookies</span><i class="fa-solid fa-cookie"></i></a>
+ 
+       </div>
+ 
+    </section>
+ 
+    <div class="credit">&copy; copyright @ 2022 by <span><a href=home.html style="color : red;">Bla Bla</a></span> | all rights reserved!</div>
+ 
+ </footer>
+ 
+ <!-- footer section ends -->
+ 
+ 
+ <!-- custom js file link  -->
+ <script src="js/script.js"></script>
+ 
+ </body>
+ </html>

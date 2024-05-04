@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <title>Image Details</title>
+
+    <style>
+        p{
+            color: aliceblue;
+        }
+        span{
+            color: aliceblue;
+        }
+        body {
+            background-color: #282828;
+            margin: 0px;
+            overflow: hidden;
+        }
+
+        .top {
+            height: 62px;
+            display: flex;
+            align-items: center;
+        }
+
+        .back{
+            display: flex;
+            flex: 1;
+            align-items: center;
+            height: 40px;
+            cursor: pointer;
+            margin-right: 450px;
+        }
+
+        .previous,
+        .next,
+        .likeshare {
+            display: flex;
+            flex: 1;
+            align-items: center;
+            height: 40px;
+        }
+
+        .quantity{
+            display: flex;
+            flex: 1;
+            align-items: center;
+            height: 40px;
+            justify-content: center;
+        }
+
+        .back p {
+            margin: 0px;
+        }
+
+        .likeshare{
+            justify-content: flex-end;
+        }
+        .likeshare img {
+            margin-right: 30px;
+            width: 20px;
+            height: 20px;
+        }
+        .image{
+            display: flex;
+            height: 425px;
+            margin-top: 60px;
+            margin-bottom: 100px;
+        }
+        .previous,
+        .next{
+            display: flex;
+            flex: 1;
+            align-items: center;
+            height: 425px;
+        }
+        .next{
+            display: flex;
+            flex: 1;
+            align-items: center;
+            justify-content: flex-end;
+            height: 425px;
+        }
+        .picture{
+            text-align: center;
+            flex: 2;
+        }
+        .picture img{
+            height: 425px;
+            width: 550px;
+            cursor: pointer;
+        }
+        .bottom{
+            text-align: center;
+            height: 90px;
+            align-items: center;
+            border: 1px solid #505050;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        button{
+            width: 40px;
+            height: 40px;
+            margin: 0px 16px;
+            background-color: #505050;
+            border-radius: 8px;
+            color: white;
+
+        }
+        .bottom img {
+            filter: invert(100%); 
+        }
+        .top img{
+            filter: invert(100%);
+        }
+
+        #image-popup {
+            width: 100%;
+            height: 100%;
+            border: 1px solid #333;
+            background: rgba(0, 0, 0, .9);
+            text-align: center;
+            box-sizing: border-box;
+            padding: 20px;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 100;
+            display: none;
+        }
+
+        #image-popup img {
+            position: absolute;
+            width: 750px;
+            height: 500px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            border-radius: 5px;
+            object-fit: cover;
+        }
+
+        #image-popup span {
+            position: absolute;
+            top: 80;
+            right: 30px;
+            font-size: 40px;
+            color:aliceblue;
+            cursor: pointer;
+        }
+        @media(max-width:768px){
+            #image-popup img{
+                width: 95%;
+            }
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="top">
+
+        <a href="Terrace house at Cheras alam damai sell.html"><div class="back"> <p style="margin-left: 25px;">&#10092; &#160;Back</p></div></a>
+        <div class="quantity"><span id="qty">1</span><span>/10</span></div>
+         <div class="likeshare">
+            <img  src="image/like.png" alt="like" />
+            <img src="image/share.png" alt="share" />
+        </div>
+
+    </div>
+
+    <div class="image">
+        <div class="previous"><button class="btn1" onclick="back()">&#10094;</button></div>
+        <div class="picture">  <img id="small-img" src="image5/Terrace-house-at-Cheras-alam-damai-Cheras-Malaysia.jpg"></div>
+        <div class="next"><button class="btn2" onclick="next()" >&#10095;</button></div>
+    </div>
+
+    <div class="bottom">
+        <img width="20px" height="20px" src="image/image.png">
+        <p style="margin: 0px; margin-top: 8px;">10 photos</p>
+    </div>
+
+    <div id="image-popup">
+        <span id="closs">&times;</span>
+        <img id="large-img" src="image/The-Arc-Cyberjaya-Sepang-Malaysia (2).jpg">
+    </div>
+    
+    <script>
+        var i=0;
+        var img = document.getElementById('small-img');
+        var largeimg =document.getElementById('large-img')
+        var btnback = document.querySelector('.btn1')
+        var btnnext = document.querySelector('.btn2')
+        var array = ['image5/Terrace-house-at-Cheras-alam-damai-Cheras-Malaysia.jpg','image5/Terrace-house-at-Cheras-alam-damai-Cheras-Malaysia (1).jpg','image5/Terrace-house-at-Cheras-alam-damai-Cheras-Malaysia (3).jpg',
+                    'image5/Terrace-house-at-Cheras-alam-damai-Cheras-Malaysia (4).jpg','image5/Terrace-house-at-Cheras-alam-damai-Cheras-Malaysia (5).jpg',
+                    'image5/Terrace-house-at-Cheras-alam-damai-Cheras-Malaysia (6).jpg','image5/Terrace-house-at-Cheras-alam-damai-Cheras-Malaysia (7).jpg',
+                    'image5/Terrace-house-at-Cheras-alam-damai-Cheras-Malaysia (8).jpg','image5/Terrace-house-at-Cheras-alam-damai-Cheras-Malaysia (9).jpg',
+                    'image5//Terrace-house-at-Cheras-alam-damai-Cheras-Malaysia (2).jpg']
+        function back(){
+            if (i > 0) {
+                i--;
+                img.src = array[i];
+                document.getElementById('qty').innerHTML= i+1;
+                btnback.style.display = 'block';
+                btnnext.style.display = 'block';
+            } else {
+                btnback.style.display = 'none';
+                btnnext.style.display = 'block';
+            }
+        }
+        function next(){
+            if(i < array.length - 1){
+                i++;
+                document.getElementById('qty').innerHTML= i+1;
+                img.src = array[i];
+                btnnext.style.display = 'block';
+                btnback.style.display = 'block';
+            }
+            else{
+                btnnext.style.display = 'none';
+                btnback.style.display = 'block';
+            }
+        }
+
+        document.getElementById('small-img').addEventListener('click', function(){
+            document.getElementById('image-popup').style.display = 'block';
+            largeimg.src = array[i];
+        })
+        document.getElementById('closs').addEventListener('click', function(){
+            document.getElementById('image-popup').style.display = 'none';
+
+        })
+
+    </script>
+</body>
+
+
+
+</html>

@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            Agent Bookings
+        </title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,400;1,900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+
+        <style>
+            body{
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                background-color: #e6e8ed;
+                color: #666666;
+                font-family: "Montserrat", sans-serif;
+            }
+
+            .material-icons-outlined{
+                vertical-align: middle;
+                line-height: 1px;
+            }
+
+            .text-primary{
+                color: #666666;
+            }
+
+            .text-blue{
+                color: #246dec;
+            }
+
+            .text-red{
+                color: #cc3c43;
+            }
+
+            .text-green{
+                color: green;
+            }
+
+            .text-orange{
+                columns: orange;
+            }
+
+            .font-weight-bold{
+                font-weight: 600;
+            }
+
+
+            .grid-container{
+                display: grid;
+                grid-template-columns: 260px 1fr 1fr;
+                grid-template-rows: 0.2fr 3fr;
+                grid-template-areas: 
+                    "sidebar header header header"
+                    "sidebar main main main";
+                height: 100vh;    
+            }
+
+            /*HEADER*/
+            .header{
+                grid-area: header;
+                height: 70px;
+                background-color: white;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 0 30px 0 30px;
+                box-shadow: 0 6px 7px -4px rgba(0,0,0,0.2);
+            }
+
+            .header-right > button{
+                border: none;
+            }
+
+            .menu-icon{
+                display: none;
+            }
+
+
+
+
+            /*SIDEBAR*/
+            #sidebar{
+                grid-area: sidebar;
+                height: 100%;
+                background-color: #21232d;
+                color: #9799ab;
+                overflow-y: auto;
+                transition: all 0.5s;
+                -webkit-transition: all 0.5s;
+            }
+
+            .sidebar-title > span {
+                display: none;
+            }
+
+            .sidebar-title{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 20px 20px 20px 20px;
+                margin-bottom: 30px;
+            }
+
+            .sidebar-brand{
+                margin-top: 15px;
+                font-size: 20px;
+                font-weight: 700;
+            }
+
+            .sidebar-list {
+                padding: 0;
+                font-size: 20px;
+                list-style-type: none;
+
+            }
+
+            .sidebar-list-item{
+                padding: 20px 20px 20px 20px;
+
+            }
+
+            .sidebar-list-item a{
+                text-decoration: none;
+                color: #9799ab;
+            }
+
+            .sidebar-list-item:hover{
+                background-color: rgba(255,255,255,0.2);
+                cursor: pointer;
+            }
+
+            .sidebar-responsive{
+                display: inline !important;
+                position: absolute;
+            }
+
+            /*MAIN*/
+            .maincontainer{
+                grid-area: main;
+                overflow-y: auto;
+                padding: 0px 20px;
+                margin: 0px;
+
+            }
+            .keat{
+                overflow-y: auto;
+                transition: all 0.5s;
+                -webkit-transition: all 0.5s;
+                background-color: #21232d;
+            }
+
+
+            .main-title{
+                display: flex;
+                /* justify-content: space-between; */
+                flex-direction: column;
+                padding: 20px;
+            }
+
+            .main-title > p {
+                font-size: 20px;
+            }
+
+            .profile{
+                padding-left: 20px;
+            }
+
+            .profiletitle > span{
+                font-size: 18px;
+                font-weight: bold;
+                color: black;
+            }
+
+            .profiletitle > p{
+                color: black;
+            }
+
+            .profileinfo > p{
+                color: black;
+            }
+
+            .box{
+                display: grid;
+                grid-template-columns: 3fr 1fr;
+                background-color: grey;
+            }
+
+            .innerbox{
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                padding: 25px;
+            }
+
+           
+
+            .boxright > img{
+                padding-left: 600px;
+            }
+            @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+            ::selection{
+            color: #fff;
+            background: #666666;
+            }
+            .wrapper-container{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 680px;
+                background: #21232d;
+            }
+
+            .wrapper{
+            width: 430px;
+            background: #fff;
+            border-radius: 5px;
+            padding: 30px;
+            box-shadow: 7px 7px 12px rgba(0,0,0,0.05);
+            overflow-y: auto;
+            }
+            .wrapper header{
+            color: #404040;
+            font-size: 27px;
+            font-weight: 600;
+            text-align: center;
+            }
+            .wrapper form{
+            height: 167px;
+            display: flex;
+            cursor: pointer;
+            margin: 30px 0;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            border-radius: 5px;
+            border: 2px dashed #404040;
+            }
+            form :where(i, p){
+            color: #404040;
+            }
+            form i{
+            font-size: 50px;
+            }
+            form p{
+            margin-top: 15px;
+            font-size: 16px;
+            }
+
+            section .row{
+            margin-bottom: 10px;
+            background: #E9F0FF;
+            list-style: none;
+            padding: 15px 20px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            }
+            section .row i{
+            color: #666666;
+            font-size: 30px;
+            }
+            section .details span{
+            font-size: 14px;
+            }
+            .progress-area .row .content{
+            width: 100%;
+            margin-left: 15px;
+            }
+            .progress-area .details{
+            display: flex;
+            align-items: center;
+            margin-bottom: 7px;
+            justify-content: space-between;
+            }
+            .progress-area .content .progress-bar{
+            height: 6px;
+            width: 100%;
+            margin-bottom: 4px;
+            background: #fff;
+            border-radius: 30px;
+            }
+            .content .progress-bar .progress{
+            height: 100%;
+            width: 0%;
+            background: #666666;
+            border-radius: inherit;
+            }
+            .uploaded-area{
+            max-height: 232px;
+            overflow-y: scroll;
+            }
+            .uploaded-area.onprogress{
+            max-height: 150px;
+            }
+            .uploaded-area::-webkit-scrollbar{
+            width: 0px;
+            }
+            .uploaded-area .row .content{
+            display: flex;
+            align-items: center;
+            }
+            .uploaded-area .row .details{
+            display: flex;
+            margin-left: 15px;
+            flex-direction: column;
+            }
+            .uploaded-area .row .details .size{
+            color: #404040;
+            font-size: 11px;
+            }
+            .uploaded-area i.fa-check{
+            font-size: 16px;
+            }
+            .details{
+               display: grid;
+               grid-template-columns: 1fr 1fr 1fr; 
+               margin-bottom: 10px
+            }
+            @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+            *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins',sans-serif;
+            }
+
+            .wrapper1{
+            width: 60px;
+            height: 19.2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #FFF;
+            border-radius: 12px;
+            margin-left: 15px;
+            margin-top: 3px;
+            border: solid 0.01px;
+            }
+            .wrapper1 span{
+            width: 100%;
+            text-align: center;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            user-select: none;
+            }
+            .wrapper1 span.num{
+            font-size: 15px;
+            border-right: 2px solid rgba(0,0,0,0.2);
+            border-left: 2px solid rgba(0,0,0,0.2);
+            pointer-events: none;
+            }
+            .in-details{
+                display: flex;
+            }
+            .in-details img{
+                width: 20px;
+                height: 20px;
+            }
+            #funished{
+                width: 60px;
+                height: 19.2px;
+                background: #FFF;
+                border-radius: 12px;
+                margin-left: 10px;
+                margin-top: 3px;
+                border: solid 0.01px;
+            }
+            #sqft{
+                width: 60px;
+                height: 19.2px;
+                background: #FFF;
+                border-radius: 12px;
+                margin-left: 10px;
+                margin-top: 3px;
+                border: solid 0.01px;
+            }
+            .hero{
+                width: 100%;
+                height: 100%;
+                display: flex;
+                /* align-items: center;
+                justify-content: center;
+                background-color: #246dec; */
+                padding: 0px 0px;
+            }
+            .container{
+                width: 450px;
+                padding: 25px;
+                border: 2px solid #666666;
+                border-radius: 10px;
+            }
+            .facilities{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-bottom: 10px;
+            }
+            .facilities-details img{
+                width: 20px;
+                height: 20px;
+            }
+            .house-detail-name{
+                margin: 15px 0;
+            }
+            .main-title button{
+                margin-top: 20px;
+                color: white;
+                background-color: #999999;
+                line-height: 20px;
+                text-align: center;
+                padding: 4px 8px;
+                border-radius: 8px;
+                margin-right: 20px;
+                border: none;
+                outline: none;
+                cursor: pointer;
+            }
+
+
+        </style>
+    </head>
+
+    <body>
+        <div class="grid-container">
+            <header class="header">
+                <div class="menu-icon" onclick="openSidebar()">
+                    <span class="material-icons-outlined">
+                        menu
+                    </span>
+                </div>
+
+                <div class="header-left">
+                    <span class="material-icons-outlined">search</span>
+                </div>
+
+                <div class="header-right">
+                    <button class="material-icons-outlined" onclick="openEmail()">email</button>
+                    <button class="material-icons-outlined" onclick="openProfile()">account_circle</button>
+                </div>
+            </header>
+
+            <aside id="sidebar">
+                <div class="sidebar-title">
+                    <div class="sidebar-brand">
+                        <span class="material-icons-outlined">inventory</span>  Agent's Inventory
+                    </div>
+                    <span class="material-icons-outlined" onclick="closeSidebar()">close</span>
+                </div>
+
+                <ul class="sidebar-list">
+                    <li class="sidebar-list-item">
+                        <span class="material-icons-outlined">home</span>
+                        <a href="http://127.0.0.1:5500/Assignment/AgentHome.html#">Home</a>
+                    </li>
+
+                    <li class="sidebar-list-item">
+                        <span class="material-icons-outlined">dashboard</span>
+                        <a href="http://127.0.0.1:5500/Assignment/SalesDashboard.html">Sales DashBoard</a>
+                    </li>
+
+                    <li class="sidebar-list-item">
+                        <span class="material-icons-outlined">inventory_2</span> MarketPlace
+                    </li>
+
+                    <li class="sidebar-list-item">
+                        <span class="material-icons-outlined">groups</span> My Customer List
+                    </li>
+
+                    <li class="sidebar-list-item">
+                        <span class="material-icons-outlined">post_add</span> Posting
+                    </li>
+
+                    <li class="sidebar-list-item">
+                        <span class="material-icons-outlined">book</span> My Bookings
+                    </li>
+                </ul>
+            </aside>
+
+            <main class="main-container">
+                <div class="main-title">
+                    <p class="font-weight-bold">POSTING</p>
+                    <div class="house-detail">
+                        <div class="house-detail-name">
+                            <p>House Name:</p>
+                            <input style="width: 450px;" type="text">
+                        </div>
+                        <div class="house-detail-name">
+                            <p>Address</p>
+                            <input style="width: 450px;" type="text">
+                        </div>
+                        <div class="house-detail-name">
+                            <p>Description</p>
+                            <input style="width: 450px;" type="text">
+                        </div>
+                        <div class="house-detail-name">
+                            <p>Rent/sell</p>
+                            <select style="width: 450px;" name="Rent/sell" id="Rent/sell">
+                                <option value="Rent">Rent</option>
+                                <option value="Sell">Sell</option>
+                            </select>
+                        </div>
+                        <div class="house-detail-name">
+                            <p>Price</p>
+                            <input style="width: 450px;" type="text">
+                        </div>
+                        <div style="margin: 20px 0;">
+                            <div class="details">
+                                <div class="in-details">
+                                    <div>
+                                        <img src="image/bed.png">
+                                        <span>bathroom : </span>
+                                    </div>
+                                    <div class="wrapper1">
+                                        <span class="minus">-</span>
+                                        <span class="num">01</span>
+                                        <span class="plus">+</span>
+                                    </div>
+                                </div>
+                                <div style="margin-left: 20px;" class="in-details">
+                                    <div>
+                                        <img src="image/bathroom.png">
+                                        <span>Bedroom : </span>
+                                    </div>
+                                    <div class="wrapper1">
+                                        <span class="minus">-</span>
+                                        <span class="num">01</span>
+                                        <span class="plus">+</span>
+                                      </div>
+                                      <div></div>
+                                </div>
+                                </div>
+                                <div class="details">
+                                    <div class="in-details">
+                                        <div>
+                                            <img src="image/plans.png">
+                                            <span>Qqft : </span>
+                                        </div>
+                                        <input style="margin-left: 52px;" type="number" id="sqft">
+                                    </div>
+                                    <div style="margin-left: 20px;"  class="in-details">
+                                        <div>
+                                            <img src="image/chandelier.png">
+                                            <span>Furnished : </span>
+                                        </div>
+                                        <select name="furnished" id="funished">
+                                            <option value="-"></option>
+                                            <option value="none">none furnished</option>
+                                            <option value="have">fully furnished</option>
+                                        </select>
+                                </div>
+                        </div>
+                        
+                    </div>
+                    <p>Facilities:</p>
+                    <div class="hero">
+                        <div class="container">
+                            <div class="facilities">
+                                <div class="facilities-details">
+                                    <img src="image/shuttlecock.png">
+                                    <span>Badminton hall</span>
+                                </div>
+                                <label>
+                                    <input class="checkbox" type="checkbox">
+                                </label>
+                            </div>
+                            <div class="facilities">
+                                <div class="facilities-details">
+                                    <img src="image/guard.png">
+                                    <span>24 hours security</span>
+                                </div>
+                                <label>
+                                    <input class="checkbox" type="checkbox">
+                                </label>
+                            </div>
+                            <div class="facilities">
+                                <div class="facilities-details">
+                                    <img src="image/praying.png">
+                                    <span>Surau (Male & Female)</span>
+                                </div>
+                                <label>
+                                    <input class="checkbox" type="checkbox">
+                                </label>
+                            </div>
+                            <div class="facilities">
+                                <div class="facilities-details">
+                                    <img src="image/video-game.png">
+                                    <span>Game room</span>
+                                </div>
+                                <label>
+                                    <input class="checkbox" type="checkbox">
+                                </label>
+                            </div>
+                            <div class="facilities">
+                                <div class="facilities-details">
+                                    <img src="image/squash.png">
+                                    <span>Squash court</span>
+                                </div>
+                                <label>
+                                    <input class="checkbox" type="checkbox">
+                                </label>
+                            </div>
+                            <div class="facilities">
+                                <div class="facilities-details">
+                                    <img src="image/swim.png">
+                                    <span>Swimming pool</span>
+                                </div>
+                                <label>
+                                    <input class="checkbox" type="checkbox">
+                                </label>
+                            </div>
+                            <div class="facilities">
+                                <div class="facilities-details">
+                                    <img src="image/barbecue.png">
+                                    <span>Barbeque Area</span>
+                                </div>
+                                <label>
+                                    <input class="checkbox" type="checkbox">
+                                </label>
+                            </div>
+                            <div class="facilities">
+                                <div class="facilities-details">
+                                    <img src="image/seesaw.png">
+                                    <span>Playground</span>
+                                </div>
+                                <label>
+                                    <input class="checkbox" type="checkbox">
+                                </label>
+                            </div>
+                            <div class="facilities">
+                                <div class="facilities-details">
+                                    <img src="image/treadmill.png">
+                                    <span>Gym room</span>
+                                </div>
+                                <label>
+                                    <input class="checkbox" type="checkbox">
+                                </label>
+                            </div>
+                            <div class="facilities">
+                                <div class="facilities-details">
+                                    <img src="image/sedan.png">
+                                    <span>Covered car park</span>
+                                </div>
+                                <label>
+                                    <input class="checkbox" type="checkbox">
+                                </label>
+                            </div>
+                            <div class="facilities">
+                                <div class="facilities-details">
+                                    <img src="image/building.png">
+                                    <span>Sky Lounge</span>
+                                </div>
+                                <label>
+                                    <input class="checkbox" type="checkbox">
+                                </label>
+                            </div>
+                            <div class="facilities">
+                                <div class="facilities-details">
+                                    <img src="image/coffee-cup.png">
+                                    <span>Cafes</span>
+                                </div>
+                                <label>
+                                    <input class="checkbox" type="checkbox">
+                                </label>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <button>Submit</button>
+                </div>
+
+
+            </main>
+            <div class="keat">
+                <div class="wrapper-container">
+                    <div class="wrapper">
+                        <header>House Image Uploader</header>
+                        <form action="#">
+                          <input class="file-input" type="file" name="file" hidden>
+                          <i class="fas fa-cloud-upload-alt"></i>
+                          <p>Browse File to Upload</p>
+                        </form>
+                        <section class="progress-area"></section>
+                        <section class="uploaded-area"></section>
+                      </div>
+                </div>
+            </div>
+            
+        </div>
+
+
+        <script>
+            //header 
+            function openEmail()
+            {
+                window.location.href = "https://mail.google.com/mail/u/0/#inbox";
+            }
+
+            function openProfile()
+            {
+                window.location.href = "http://127.0.0.1:5500/Assignment/AgentProfile.html";
+            }
+
+            
+
+
+
+
+
+            //sidebar toggle
+
+            var sidebarOpen = false;
+            var sidebar = document.getElementById("sidebar");
+
+            function openSidebar(){
+                if(!sidebarOpen){
+                    sidebar.classList.add("sidebar-responsive");
+                    sidebarOpen = true;
+
+                }
+            }
+
+            function closeSidebar(){
+                if(sidebarOpen){
+                    sidebar.classList.remove("sidebar-responsive");
+                    sidebarOpen = false;
+                }
+            }
+
+            const form = document.querySelector("form"),
+            fileInput = document.querySelector(".file-input"),
+            progressArea = document.querySelector(".progress-area"),
+            uploadedArea = document.querySelector(".uploaded-area");
+
+            // form click event
+            form.addEventListener("click", () =>{
+            fileInput.click();
+            });
+
+            fileInput.onchange = ({target})=>{
+            let file = target.files[0]; //getting file [0] this means if user has selected multiple files then get first one only
+            if(file){
+                let fileName = file.name; //getting file name
+                if(fileName.length >= 12){ //if file name length is greater than 12 then split it and add ...
+                let splitName = fileName.split('.');
+                fileName = splitName[0].substring(0, 13) + "... ." + splitName[1];
+                }
+                uploadFile(fileName); //calling uploadFile with passing file name as an argument
+            }
+            }
+
+            // file upload function
+            function uploadFile(name){
+            let xhr = new XMLHttpRequest(); //creating new xhr object (AJAX)
+            xhr.open("POST", "php/upload.php"); //sending post request to the specified URL
+            xhr.upload.addEventListener("progress", ({loaded, total}) =>{ //file uploading progress event
+                let fileLoaded = Math.floor((loaded / total) * 100);  //getting percentage of loaded file size
+                let fileTotal = Math.floor(total / 1000); //gettting total file size in KB from bytes
+                let fileSize;
+                // if file size is less than 1024 then add only KB else convert this KB into MB
+                (fileTotal < 1024) ? fileSize = fileTotal + " KB" : fileSize = (loaded / (1024*1024)).toFixed(2) + " MB";
+                let progressHTML = `<li class="row">
+                                    <i class="fa fa-file" aria-hidden="true"></i>
+                                    <div class="content">
+                                        <div class="details">
+                                        <span class="name">${name} • Uploading</span>
+                                        <span class="percent">${fileLoaded}%</span>
+                                        </div>
+                                        <div class="progress-bar">
+                                        <div class="progress" style="width: ${fileLoaded}%"></div>
+                                        </div>
+                                    </div>
+                                    </li>`;
+                // uploadedArea.innerHTML = ""; //uncomment this line if you don't want to show upload history
+                uploadedArea.classList.add("onprogress");
+                progressArea.innerHTML = progressHTML;
+                if(loaded == total){
+                progressArea.innerHTML = "";
+                let uploadedHTML = `<li class="row">
+                                        <div class="content upload">
+                                        <i class="fa fa-file" aria-hidden="true"></i>
+                                        <div class="details">
+                                            <span class="name">${name} • Uploaded</span>
+                                            <span class="size">${fileSize}</span>
+                                        </div>
+                                        </div>
+                                        <i class="fas fa-check"></i>
+                                    </li>`;
+                uploadedArea.classList.remove("onprogress");
+                // uploadedArea.innerHTML = uploadedHTML; //uncomment this line if you don't want to show upload history
+                uploadedArea.insertAdjacentHTML("afterbegin", uploadedHTML); //remove this line if you don't want to show upload history
+                }
+                });
+                let data = new FormData(form); //FormData is an object to easily send form data
+                xhr.send(data); //sending form data
+                }
+
+                function displaySelectedFile() {
+                    const fileInput = document.querySelector(".file-input");
+                    const fileDisplay = document.querySelector(".file-display");
+
+                    if (fileInput.files.length > 0) {
+                    fileDisplay.textContent = `Selected File: ${fileInput.files[0].name}`;
+                    } else {
+                    fileDisplay.textContent = "No file selected";
+                    }
+                }
+                const plusButtons = document.querySelectorAll(".plus");
+                const minusButtons = document.querySelectorAll(".minus");
+                const numElements = document.querySelectorAll(".num");
+
+                plusButtons.forEach((plus, index) => {
+                    plus.addEventListener("click", () => {
+                        handleButtonClick(index, 1);
+                    });
+                });
+
+                minusButtons.forEach((minus, index) => {
+                    minus.addEventListener("click", () => {
+                        handleButtonClick(index, -1);
+                    });
+                });
+
+                function handleButtonClick(index, value) {
+                    let a = parseInt(numElements[index].innerText);
+                    a += value;
+                    a = (a < 10) ? "0" + a : a;
+                    numElements[index].innerText = a;
+                }
+
+           
+
+
+        </script>
+    </body>
+
+</html>

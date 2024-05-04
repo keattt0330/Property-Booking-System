@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Home</title>
+
+   <link href="img/favicon.ico" rel="icon">
+   <!-- font awesome cdn link  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+   <!-- custom css file link  -->
+   <link rel="stylesheet" href="css/style.css">
+
+<style>
+   .all {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h2 {
+  text-align: center;
+  color: #333;
+}
+
+form {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-label {
+  font-weight: bold;
+}
+
+.form-control {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.col {
+  flex: 0 0 48%;
+}
+
+.btn {
+  background-color: #ff0000;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #ff0000;
+}
+
+/* Optional: Add media queries for responsive design */
+@media (max-width: 768px) {
+  .col {
+    flex: 0 0 100%;
+    margin-bottom: 15px;
+  }
+}
+
+
+</style>
+
+</head>
+<body>
+   
+<!-- header section starts  -->
+
+<header class="header">
+
+   <nav class="navbar nav-1">
+      <section class="flex">
+         <a href="home.html" class="logo"><i class="fas fa-house"></i>Bla Bla</a>
+      </section>
+   </nav>
+
+   <nav class="navbar nav-2">
+      <section class="flex">
+         <div id="menu-btn" class="fas fa-bars"></div>
+
+         <div class="menu">
+            <ul>
+               <li><a href="buy.html">BUY </a></li>
+               <li><a href="rent.html">RENT </a></li>
+               <li><a href="new.html">NEW LAUNCHES </a></li>
+               <li><a href="agent.html">FIND AGENT </a></li>
+               <li><a href="#">COMMUNITY</a>
+                  <ul>
+                     <li><a href="feedback.html" class="active">FEEDBACK</a></li>
+                     <li><a href="testimonial.html">TESTIMONIAL</a></li>
+                  </ul>
+               </li>
+               <li><a href="#">HELP<i class="fas fa-angle-down"></i></a>
+                  <ul>
+                     <li><a href="about.html">about us</a></i></li>
+                     <li><a href="contact.html">contact us</a></i></li>
+                     <li><a href="faq.html">FAQ</a></i></li>
+                  </ul>
+               </li>
+            </ul>
+         </div>
+
+         <ul>
+            <li><a href="#">account <i class="fas fa-angle-down"></i></a>
+               <ul>
+                  <li><a href="login.html">login</a></li>
+                  <li><a href="register.html">register</a></li>
+               </ul>
+            </li>
+         </ul>
+      </section>
+   </nav>
+
+</header>
+
+<!-- header section ends -->
+
+   <div class="all">
+      <h2>Feedback</h2>
+      <form id="feedbackForm">
+         <div class="mb">
+         <p style="font-size: 20px;">Please provide your feedback in the form below :</p>
+         <label class="form-label" for="feedback_comments" style="font-size: 15px;">Comments:</label>
+         <textarea class="form-control" required rows="6" name="comments" id="feedback_comments"></textarea>
+         </div>
+         <div class="row">
+         <div class="col">
+            <label class="form-label" for="feedback_name" style="font-size: 20px;">Your Name:</label>
+            <input type="text" required name="name" class="form-control" id="feedback_name"/>
+         </div>
+         <div class="col">
+            <label class="form-label" for="feedback_email" style="font-size: 20px;">Email:</label>
+            <input type="email" name="email" required class="form-control" id="feedback_email"/>
+         </div>
+         </div>
+         <button type="button" class="btn btn-success btn-lg" onclick="validateAndSubmit()">Post</button>
+      </form>
+   </div>
+
+ <!-- footer section starts  -->
+
+ <footer class="footer">
+
+   <section class="flex">
+
+      <div class="box">
+         <a href="tel:01234567890"><i class="fas fa-phone"></i><span>01234567890</span></a>
+         <a href="tel:01234567890"><i class="fas fa-phone"></i><span>60324680123</span></a>
+         <a href="mailto:shaikhanas@gmail.com"><i class="fas fa-envelope"></i><span>blabla@gmail.com</span></a>
+         <a href="https://www.google.com/maps/search/mmu+cyberjaya/@2.9265004,101.6395575,17z/data=!3m1!4b1?entry=ttu"><i class="fas fa-map-marker-alt"></i><span>Persiaran Multimedia, 63100 <br>&emsp;&ensp;Cyberjaya, Selangor </span></a>
+         
+      </div>
+
+      <div class="box">
+         <a href="home.html"><span>Home</span></a>
+         <a href="about.html"><span>About Us</span></a>
+         <a href="contact.html"><span>Contact Us</span></a>
+         <a href="privacy.html"><span>Privacy Policy</span></a>
+         <a href="terms.html"><span>Terms & Condition</span></a>
+      </div>
+
+      <div class="box">
+         <a href="https://www.facebook.com/yansheng0405"><span>facebook</span><i class="fab fa-facebook-f"></i></a>
+         <a href="https://twitter.com/?lang=en"><span>twitter</span><i class="fab fa-twitter"></i></a>
+         <a href="https://wa.me/01234567890"><span>whatsapp</span><i class="fab fa-whatsapp"></i></a>
+         <a href="https://www.instagram.com/soonkeattt__/"><span>instagram</span><i class="fab fa-instagram"></i></a>
+         <a href="cookies.html"><span>cookies</span><i class="fa-solid fa-cookie"></i></a>
+
+      </div>
+
+   </section>
+
+   <div class="credit">&copy; copyright @ 2022 by <span><a href=home.html style="color : red;">Bla Bla</a></span> | all rights reserved!</div>
+
+</footer>
+
+<!-- footer section ends -->
+
+
+<!-- custom js file link  -->
+<script src="js/script.js"></script>
+<script>
+   function validateAndSubmit() {
+     // Validate if all fields are filled
+     var comments = document.getElementById('feedback_comments').value;
+     var name = document.getElementById('feedback_name').value;
+     var email = document.getElementById('feedback_email').value;
+
+     if (comments.trim() === '' || name.trim() === '' || email.trim() === '') {
+       // Show alert if any field is empty
+       alert('Please fill in all fields.');
+     } else {
+       // Add your feedback submission logic here (e.g., AJAX request)
+
+       // Show a confirmation message
+       alert('Thank you for your feedback!');
+       alert('Your feedback will be posted to our testimonial page once admin approved');
+       // Redirect to home.html (you can replace this with your actual home page)
+       window.location.href = 'testimonial.html';
+     }
+   }
+ </script>
+
+</body>
+</html>
